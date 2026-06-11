@@ -1,8 +1,11 @@
+import os
 import requests
 import csv
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
-API_KEY = "AIzaSyAmy_1UJJAUHiAkwzfh2y-OXHbWa4AcZnc"
+API_KEY = os.getenv("GOOGLE_API_KEY")
 
 SECTORES = [
     "restaurantes",

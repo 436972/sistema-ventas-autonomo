@@ -1,8 +1,10 @@
-import anthropic
 import os
 import json
+import anthropic
+from dotenv import load_dotenv
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
-ANTHROPIC_API_KEY = "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"
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 DEMOS_DIR = os.path.expanduser("~/sistema-ventas-autonomo/demos")
 os.makedirs(DEMOS_DIR, exist_ok=True)
 
