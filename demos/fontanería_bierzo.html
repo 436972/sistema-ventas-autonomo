@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontanería Bierzo | Fontanero en Ponferrada, El Bierzo</title>
+    <meta name="description" content="Fontanero profesional en Ponferrada. Reparaciones urgentes en menos de 2h. 15 años resolviendo averías en El Bierzo. ★4.8/5 · 97 clientes reales.">
+    <meta property="og:title" content="Fontanería Bierzo | Fontanero en Ponferrada, El Bierzo">
+    <meta property="og:description" content="Fontanero profesional en Ponferrada. Reparaciones urgentes en menos de 2h. 15 años resolviendo averías en El Bierzo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&h=630&fit=crop">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Fontanería Bierzo",
+      "image": "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200",
+      "telephone": "+34987789123",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Compostilla, 14",
+        "addressLocality": "Ponferrada",
+        "addressRegion": "El Bierzo",
+        "postalCode": "24400",
+        "addressCountry": "ES"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "97"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "€€",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "42.5500",
+        "longitude": "-6.5833"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --azul-profesional: #1e3a5f;
+            --azul-oscuro: #0f2338;
+            --naranja: #ff6b35;
+            --naranja-hover: #e55a2b;
+            --gris-claro: #f8f9fa;
+            --gris-medio: #6c757d;
+            --blanco: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #212529;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-profesional) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=900&fit=crop&q=85');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 400;
+            margin-bottom: 48px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--naranja);
+            color: var(--blanco);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--naranja-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
+        }
+        
+        .btn-secondary {
+            background: var(--blanco);
+            color: var(--azul-profesional);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* TRUST BAR */
+        .trust-bar {
+            background: var(--blanco);
+            padding: 28px 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--azul-profesional);
+        }
+        
+        .trust-item .star {
+            color: #ffa500;
+            font-size: 1.1rem;
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 100px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--azul-oscuro);
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gris-medio);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* SERVICIOS */
+        .servicios {
+            background: var(--gris-claro);
+        }
+        
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        
+        .servicio-card {
+            background: var(--blanco);
+            padding: 40px 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .servicio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .servicio-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--naranja), #ff8c5a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+        
+        .servicio-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            margin-bottom: 12px;
+        }
+        
+        .servicio-card p {
+            color: var(--gris-medio);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .servicio-precio {
+            font-size: 0.9rem;
+            color: var(--naranja);
+            font-weight: 600;
+        }
+        
+        /* POR QUÉ NOSOTROS */
+        .diferenciadores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+        
+        .diferenciador {
+            text-align: center;
+        }
+        
+        .diferenciador-numero {
+            width: 72px;
+            height: 72px;
+            background: var(--azul-profesional);
+            color: var(--blanco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 24px;
+        }
+        
+        .diferenciador h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            margin-bottom: 12px;
+        }
+        
+        .diferenciador p {
+            color: var(--gris-medio);
+            line-height: 1.7;
+        }
+        
+        /* PROCESO */
+        .proceso {
+            background: var(--gris-claro);
+        }
+        
+        .proceso-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            position: relative;
+        }
+        
+        .step {
+            background: var(--blanco);
+            padding: 36px 28px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-numero {
+            width: 48px;
+            height: 48px;
+            background: var(--naranja);
+            color: var(--blanco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            margin-bottom: 12px;
+        }
+        
+        .step p {
+            color: var(--gris-medio);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* GALERÍA */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .galeria-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* TESTIMONIOS */
+        .testimonios {
+            background: var(--gris-claro);
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        
+        .testimonio {
+            background: var(--blanco);
+            padding: 36px 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+        
+        .testimonio-stars {
+            color: #ffa500;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        
+        .testimonio-text {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonio-autor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .testimonio-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--azul-profesional);
+            color: var(--blanco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .testimonio-info h4 {
+            font-weight: 600;
+            color: var(--azul-oscuro);
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        
+        .testimonio-info p {
+            color: var(--gris-medio);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA FINAL */
+        .cta-final {
+            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-profesional));
+            color: var(--blanco);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .cta-final h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        
+        .cta-final p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-final .btn {
+            font-size: 1.2rem;
+            padding: 20px 48px;
+        }
+        
+        /* CONTACTO */
+        .contacto {
+            background: var(--blanco);
+        }
+        
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .contacto-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .contacto-item-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--azul-profesional);
+            color: var(--blanco);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .contacto-item-content h3 {
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+        
+        .contacto-item-content p,
+        .contacto-item-content a {
+            color: var(--gris-medio);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        .contacto-item-content a:hover {
+            color: var(--naranja);
+        }
+        
+        .mapa {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+        
+        .mapa iframe {
+            height: 100%;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 48px 20px 32px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-attribution {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+        
+        .footer-attribution a {
+            color: var(--blanco);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                height: 100vh;
+                min-height: 700px;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .trust-container {
+                gap: 16px;
+            }
+            
+            .trust-item {
+                font-size: 0.85rem;
+            }
+            
+            .mapa {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Reparamos tu avería en menos de 2 horas</h1>
+            <p class="hero-subtitle">Fontaneros profesionales en Ponferrada y El Bierzo desde hace 15 años. Cuando hay una fuga, cada minuto cuenta.</p>
+            <div class="cta-group">
+                <a href="tel:+34987789123" class="btn btn-primary">📞 Llamar ahora: 987 789 123</a>
+                <a href="https://wa.me/34987789123" class="btn btn-secondary">💬 WhatsApp</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <span class="star">⭐</span>
+                <span>4.8/5 en Google</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>97 clientes satisfechos</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>15 años en Ponferrada</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Garantía de 2 años en reparaciones</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SERVICIOS -->
+    <section class="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resolvemos cualquier problema de fontanería</h2>
+                <p>Desde la urgencia que no puede esperar hasta la reforma que llevas meses pensando</p>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🚰</div>
+                    <h3>Fugas y goteos</h3>
+                    <p>Detectamos y reparamos cualquier fuga en menos de 2 horas. Evita que una gotera se convierta en una inundación.</p>
+                    <div class="servicio-precio">Desde 45€</div>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔧</div>
+                    <h3>Desatascos urgentes</h3>
+                    <p>Fregaderos, lavabos, inodoros y desagües. Equipamiento profesional para cualquier atasco, por difícil que sea.</p>
+                    <div class="servicio-precio">Desde 60€</div>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔥</div>
+                    <h3>Calderas y calentadores</h3>
+                    <p>Instalación, reparación y mantenimiento. Sin agua caliente no se puede vivir, lo sabemos y actuamos rápido.</p>
+                    <div class="servicio-precio">Desde 75€</div>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🚿</div>
+                    <h3>Reformas de baño</h3>
+                    <p>Desde cambiar un grifo hasta reforma completa. Presupuesto detallado sin compromiso en 24 horas.</p>
+                    <div class="servicio-precio">Presupuesto gratuito</div>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">💧</div>
+                    <h3>Instalaciones nuevas</h3>
+                    <p>Tuberías, grifería, sanitarios. Trabajamos con las mejores marcas y garantizamos cada instalación.</p>
+                    <div class="servicio-precio">Consultar</div>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">⚡</div>
+                    <h3>Mantenimiento preventivo</h3>
+                    <p>Revisiones periódicas que evitan averías futuras. Una inversión pequeña que te ahorra disgustos grandes.</p>
+                    <div class="servicio-precio">Desde 80€/año</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- POR QUÉ NOSOTROS -->
+    <section class="por-que">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por qué nos eligen en Ponferrada</h2>
+                <p>Hay muchos fontaneros. Pero hay razones por las que llevamos 15 años siendo la primera llamada.</p>
+            </div>
+            <div class="diferenciadores-grid">
+                <div class="diferenciador">
+                    <div class="diferenciador-numero">1</div>
+                    <h3>Llegamos en menos de 2 horas</h3>
+                    <p>En urgencias reales, no mañana ni "cuando pueda". Tenemos furgoneta en Ponferrada lista para salir. Tu emergencia es nuestra prioridad.</p>
+                </div>
+                <div class="diferenciador">
+                    <div class="diferenciador-numero">2</div>
+                    <h3>Precio cerrado antes de empezar</h3>
+                    <p>Nada de sorpresas en la factura. Te explicamos qué hay que hacer, cuánto cuesta y por qué. Si no estás de acuerdo, el desplazamiento no te cuesta nada.</p>
+                </div>
+                <div class="diferenciador">
+                    <div class="diferenciador-numero">3</div>
+                    <h3>Garantía real de 2 años</h3>
+                    <p>No letra pequeña. Si algo falla en lo que hemos reparado, volvemos y lo arreglamos sin cobrarte. Así de simple.</p>
+                </div>
+                <div class="diferenciador">
+                    <div class="diferenciador-numero">4</div>
+                    <h3>Dejamos todo limpio</h3>
+                    <p>Recogemos, limpiamos y nos llevamos los escombros. Tu casa queda como estaba, pero con la avería resuelta. Parece obvio, pero no todos lo hacen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PROCESO -->
+    <section class="proceso">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cómo trabajamos</h2>
+                <p>Cuatro pasos simples. Sin complicaciones ni vueltas innecesarias.</p>
+            </div>
+            <div class="proceso-steps">
+                <div class="step">
+                    <div class="step-numero">1</div>
+                    <h3>Llamas o escribes</h3>
+                    <p>Teléfono o WhatsApp. Nos cuentas qué pasa. Te decimos cuánto tardaremos en llegar y un precio aproximado.</p>
+                </div>
+                <div class="step">
+                    <div class="step-numero">2</div>
+                    <h3>Vamos a tu casa</h3>
+                    <p>Valoramos el problema in situ. Te damos un presupuesto cerrado. Si no te convence, no pasa nada.</p>
+                </div>
+                <div class="step">
+                    <div class="step-numero">3</div>
+                    <h3>Reparamos</h3>
+                    <p>Llevamos el material en la furgoneta. La mayoría de averías las resolvemos en la misma visita. Sin esperas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-numero">4</div>
+                    <h3>Garantía de 2 años</h3>
+                    <p>Pagas solo si estás satisfecho. Te damos factura y garantía por escrito. Y si hay cualquier problema, una llamada y volvemos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GALERÍA -->
+    <section class="galeria">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trabajos reales en Ponferrada</h2>
+                <p>Esto es lo que hacemos cada día</p>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&h=450&fit=crop&q=85" alt="Instalación de fontanería profesional" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1581858756683-c17527c91082?w=600&h=450&fit=crop&q=85" alt="Reparación de calderas" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=600&h=450&fit=crop&q=85" alt="Reforma de baño completa" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1595814433015-e12f8bbda2a6?w=600&h=450&fit=crop&q=85" alt="Instalación de grifería moderna" loading="lazy">
+                </div>
+                <div class="galeria-item">
+                

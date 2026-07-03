@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental Vitalis | Dentista en Madrid</title>
+    <meta name="description" content="Clínica dental de confianza en Madrid. Estética dental, implantes, ortodoncia invisible. Primera consulta gratuita. Llama al 910 123 456.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy:     #0a2342;
+            --navy-mid: #1a3a5c;
+            --blue:     #00b4d8;
+            --blue-lt:  #48cae4;
+            --blue-pale:#e0f7fc;
+            --gray:     #4a5568;
+            --gray-lt:  #f0f8ff;
+            --white:    #ffffff;
+            --text:     #1a2a3a;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.15; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,180,216,0.12);
+            padding: 16px 0;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-mark {
+            width: 36px; height: 36px; background: var(--navy);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+        }
+        .logo-mark svg { width: 20px; height: 20px; fill: var(--blue); }
+        .logo-text { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--navy); }
+        .logo-text span { color: var(--blue); }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--gray); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--navy); }
+        .nav-cta {
+            background: var(--blue); color: var(--white);
+            padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            text-decoration: none; transition: background .2s;
+        }
+        .nav-cta:hover { background: var(--navy); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0d3060 100%);
+            display: flex; align-items: center; padding-top: 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute; top: -200px; right: -200px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(0,180,216,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-inner {
+            max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(0,180,216,0.15); border: 1px solid rgba(0,180,216,0.3);
+            color: var(--blue-lt); font-size: 12px; padding: 5px 12px; border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .hero-badge::before { content: "★"; color: var(--blue); }
+        .hero h1 { font-size: clamp(36px, 5vw, 58px); color: var(--white); margin-bottom: 20px; }
+        .hero h1 em { color: var(--blue-lt); font-style: italic; display: block; }
+        .hero p { font-size: 17px; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 32px; }
+        .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn-white {
+            background: var(--white); color: var(--navy);
+            padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 600;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .btn-outline {
+            border: 1.5px solid rgba(255,255,255,0.35); color: var(--white);
+            padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 500;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .hero-stats { display: flex; gap: 32px; margin-top: 40px; }
+        .stat strong { display: block; font-size: 28px; font-weight: 700; color: var(--white); }
+        .stat span { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+        /* Hero visual */
+        .hero-visual { display: flex; flex-direction: column; gap: 12px; }
+        .hero-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 20px;
+            backdrop-filter: blur(20px);
+        }
+        .hero-card-main {
+            background: var(--white); border-radius: 14px; padding: 24px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .card-icon {
+            width: 56px; height: 56px; background: var(--blue-pale);
+            border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .card-icon svg { width: 28px; height: 28px; }
+        .card-body h3 { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+        .card-body p { font-size: 13px; color: var(--gray); }
+        .card-row { display: flex; gap: 10px; }
+        .mini-card {
+            flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px; padding: 14px; text-align: center;
+        }
+        .mini-card strong { display: block; font-size: 20px; font-weight: 700; color: var(--white); }
+        .mini-card span { font-size: 11px; color: rgba(255,255,255,0.55); }
+
+        /* ── TRUST BAR ── */
+        .trust-bar {
+            background: var(--blue-pale); padding: 18px 24px;
+            display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap;
+            border-bottom: 1px solid rgba(0,180,216,0.15);
+        }
+        .trust-item { display: flex; align-items: center; gap: 8px; }
+        .trust-icon { width: 20px; height: 20px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .trust-icon svg { width: 11px; height: 11px; fill: var(--blue); }
+        .trust-item span { font-size: 13px; font-weight: 500; color: var(--navy); }
+
+        /* ── SERVICIOS ── */
+        .section { padding: 90px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-label { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+        .section-title { font-size: clamp(28px, 4vw, 42px); color: var(--navy); margin-bottom: 14px; }
+        .section-sub { font-size: 16px; color: var(--gray); max-width: 560px; line-height: 1.7; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+        .service-card {
+            background: var(--gray-lt); border: 1px solid rgba(0,180,216,0.12);
+            border-radius: 16px; padding: 28px; transition: box-shadow .2s, border-color .2s;
+        }
+        .service-card:hover { box-shadow: 0 8px 32px rgba(0,180,216,0.12); border-color: var(--blue); }
+        .svc-icon {
+            width: 48px; height: 48px; background: var(--navy);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+        }
+        .svc-icon svg { width: 24px; height: 24px; fill: var(--blue); }
+        .service-card h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+        .service-card p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+        /* ── PROCESO ── */
+        .proceso { background: var(--navy); }
+        .proceso .section-label { color: var(--blue-lt); }
+        .proceso .section-title { color: var(--white); }
+        .proceso .section-sub { color: rgba(255,255,255,0.6); }
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); margin-top: 48px; }
+        .step { background: var(--navy); padding: 28px 20px; position: relative; }
+        .step-num { font-size: 48px; font-weight: 800; color: rgba(0,180,216,0.15); margin-bottom: 12px; line-height: 1; font-family: 'Inter', sans-serif; }
+        .step h3 { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+        .step p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+        /* ── TESTIMONIOS ── */
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+        .testi-card {
+            background: var(--white); border: 1px solid rgba(0,180,216,0.12);
+            border-radius: 16px; padding: 24px;
+        }
+        .stars { color: #F59E0B; font-size: 14px; margin-bottom: 12px; letter-spacing: 2px; }
+        .testi-card p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+        .testi-author { display: flex; align-items: center; gap: 10px; }
+        .avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--navy); display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700; color: var(--blue);
+        }
+        .author-name { font-size: 13px; font-weight: 600; color: var(--navy); }
+        .author-tag { font-size: 11px; color: var(--gray); }
+
+        /* ── CTA FINAL ── */
+        .cta-section {
+            background: var(--blue-pale); padding: 90px 0; text-align: center;
+            border-top: 1px solid rgba(0,180,216,0.15);
+        }
+        .cta-section h2 { font-size: clamp(28px, 4vw, 44px); color: var(--navy); margin-bottom: 14px; }
+        .cta-section p { font-size: 16px; color: var(--gray); margin-bottom: 32px; }
+        .cta-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--navy); color: var(--white);
+            padding: 16px 36px; border-radius: 12px; font-size: 16px; font-weight: 600;
+            text-decoration: none; transition: background .2s;
+        }
+        .cta-primary:hover { background: var(--blue); }
+        .cta-note { margin-top: 14px; font-size: 13px; color: var(--gray); }
+
+        /* ── FOOTER ── */
+        footer { background: var(--navy); padding: 48px 0 24px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; }
+        footer h4 { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+        footer a { display: block; color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; margin-bottom: 8px; }
+        footer a:hover { color: var(--blue-lt); }
+        .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; margin-top: 10px; max-width: 240px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+        @media (max-width: 768px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .services-grid, .testi-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .trust-bar { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.69 2 6 4.69 6 8c0 2.5 1.5 4.67 3.67 5.65L9 16h6l-.67-2.35C16.5 12.67 18 10.5 18 8c0-3.31-2.69-6-6-6zm-1 16h2l-.5 2h-1l-.5-2z"/></svg>
+            </div>
+            <span class="logo-text">Vitalis<span>Dental</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Equipo</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <a href="tel:910123456" class="nav-cta">Primera consulta gratis →</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge">4.9 estrellas · +280 reseñas verificadas</div>
+            <h1>Tu sonrisa,<em>en manos expertas.</em></h1>
+            <p>Clínica dental con tecnología de última generación. Tratamientos estéticos, implantes y ortodoncia invisible con resultados desde la primera visita.</p>
+            <div class="hero-ctas">
+                <a href="tel:910123456" class="btn-white">📞 Primera consulta gratis</a>
+                <a href="#servicios" class="btn-outline">Ver tratamientos</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><strong>+2.400</strong><span>Pacientes atendidos</span></div>
+                <div class="stat"><strong>15 años</strong><span>de experiencia</span></div>
+                <div class="stat"><strong>4.9 ★</strong><span>en Google</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card-main">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="1.5"><path d="M12 2C8.69 2 6 4.69 6 8c0 2.5 1.5 4.67 3.67 5.65L9 16h6l-.67-2.35C16.5 12.67 18 10.5 18 8c0-3.31-2.69-6-6-6z"/><path d="M9 16l.5 4a1.5 1.5 0 003 0l.5-4"/></svg>
+                </div>
+                <div class="card-body">
+                    <h3>Cita confirmada</h3>
+                    <p>Hoy 17:30 · Dr. Martínez · Revisión + limpieza</p>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="card-row">
+                    <div class="mini-card"><strong>48h</strong><span>Tiempo de espera</span></div>
+                    <div class="mini-card"><strong>0 €</strong><span>Primera consulta</span></div>
+                    <div class="mini-card"><strong>100%</strong><span>Seguro médico</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="trust-bar">
+    <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><path d="M10 3L5 8.5 2 5.5"/></svg></div>
+        <span>Sin listas de espera</span>
+    </div>
+    <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><path d="M10 3L5 8.5 2 5.5"/></svg></div>
+        <span>Financiación sin intereses</span>
+    </div>
+    <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><path d="M10 3L5 8.5 2 5.5"/></svg></div>
+        <span>Garantía de tratamientos</span>
+    </div>
+    <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><path d="M10 3L5 8.5 2 5.5"/></svg></div>
+        <span>Tecnología digital 3D</span>
+    </div>
+</div>
+
+<section class="section" id="servicios">
+    <div class="container">
+        <p class="section-label">Tratamientos</p>
+        <h2 class="section-title">Lo que podemos hacer por tu sonrisa</h2>
+        <p class="section-sub">Cada tratamiento está diseñado para darte el resultado más natural posible con la tecnología más avanzada.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                <h3>Blanqueamiento dental</h3>
+                <p>Hasta 8 tonos más blanco en una sesión. Resultado inmediato y duradero con nuestro sistema LED profesional.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                <h3>Ortodoncia invisible</h3>
+                <p>Alinea tus dientes sin brackets. Tratamiento casi invisible, con seguimiento digital mensual desde tu móvil.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg></div>
+                <h3>Implantes dentales</h3>
+                <p>Solución permanente con implantes de titanio de alta calidad. Protocolo de colocación en una sola sesión.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                <h3>Diagnóstico 3D</h3>
+                <p>Escáner digital de última generación. Vemos todo lo que no se ve a simple vista para un diagnóstico preciso.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h3>Odontología estética</h3>
+                <p>Carillas de porcelana, diseño de sonrisa y microabrasión. Resultados que cambian cómo te ves y cómo te sientes.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h3>Odontología infantil</h3>
+                <p>Revisiones, selladores y tratamientos preventivos para los más pequeños. Un primer contacto positivo que dura toda la vida.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section proceso">
+    <div class="container">
+        <p class="section-label">Cómo funciona</p>
+        <h2 class="section-title">Tu primer tratamiento, paso a paso</h2>
+        <p class="section-sub">Sin sorpresas. Sin listas de espera. Sin letra pequeña.</p>
+        <div class="steps">
+            <div class="step"><div class="step-num">01</div><h3>Consulta gratuita</h3><p>Revisión completa sin coste. Te explicamos exactamente qué necesitas y qué no.</p></div>
+            <div class="step"><div class="step-num">02</div><h3>Diagnóstico digital</h3><p>Escáner 3D en 10 minutos. Vemos todo con precisión milimétrica.</p></div>
+            <div class="step"><div class="step-num">03</div><h3>Plan personalizado</h3><p>Presupuesto cerrado sin letra pequeña. Con opciones de financiación sin intereses.</p></div>
+            <div class="step"><div class="step-num">04</div><h3>Tu nueva sonrisa</h3><p>Tratamiento con los tiempos acordados. Seguimiento incluido.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <p class="section-label">Pacientes</p>
+        <h2 class="section-title">Lo que dicen de nosotros</h2>
+        <p class="section-sub">Más de 280 reseñas en Google. Leélas tú mismo.</p>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Tenía pánico al dentista desde siempre. En Vitalis me trataron con una paciencia y amabilidad que no había encontrado en ningún otro lado. Ya he venido tres veces."</p>
+                <div class="testi-author"><div class="avatar">MR</div><div><div class="author-name">María R.</div><div class="author-tag">Ortodoncia invisible</div></div></div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"El blanqueamiento fue increíble. En dos horas salí con una sonrisa completamente diferente. Lo recomendé a toda mi familia y ya vienen todos aquí."</p>
+                <div class="testi-author"><div class="avatar">JS</div><div><div class="author-name">Javier S.</div><div class="author-tag">Blanqueamiento LED</div></div></div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Presupuesto transparente, sin sorpresas al final. El implante quedó perfecto y no sentí nada durante la intervención. Profesionalidad absoluta."</p>
+                <div class="testi-author"><div class="avatar">LC</div><div><div class="author-name">Laura C.</div><div class="author-tag">Implante dental</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Tu primera consulta es gratuita.</h2>
+        <p>Sin compromiso. Sin listas de espera. Reserva ahora y te atendemos esta semana.</p>
+        <a href="tel:910123456" class="cta-primary">📞 Llama ahora · 910 123 456</a>
+        <p class="cta-note">O escríbenos por WhatsApp y te respondemos en menos de 1 hora</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="logo-text" style="font-size:20px">Vitalis<span>Dental</span></span>
+                <p>Clínica dental de referencia. Tecnología, experiencia y trato humano en cada visita.</p>
+            </div>
+            <div>
+                <h4>Tratamientos</h4>
+                <a href="#">Blanqueamiento</a>
+                <a href="#">Ortodoncia</a>
+                <a href="#">Implantes</a>
+                <a href="#">Estética</a>
+            </div>
+            <div>
+                <h4>Clínica</h4>
+                <a href="#">Nuestro equipo</a>
+                <a href="#">Tecnología</a>
+                <a href="#">Precios</a>
+                <a href="#">Blog</a>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <a href="#">910 123 456</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">info@vitalis.es</a>
+                <a href="#">Cómo llegar</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Vitalis Dental · Todos los derechos reservados</span>
+            <span>Aviso legal · Privacidad · Cookies</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

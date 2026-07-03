@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Alma | Peluquería en Ponferrada, El Bierzo</title>
+    <meta name="description" content="Peluquería de confianza en Ponferrada. Más de 134 clientes satisfechos. Corte, color, tratamientos y peinados. Calle del Temple, 8. Llámanos al 987 123 456">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: #2d2d2d;
+            line-height: 1.6;
+            background-color: #faf8f6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: #1a1a1a;
+        }
+        
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: #f5f5f5;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-primary {
+            background-color: #d4a574;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c69563;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #1fb855;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .trust-bar {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .trust-item strong {
+            color: #d4a574;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #d4a574;
+        }
+        
+        .service-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 1.1rem;
+        }
+        
+        .about {
+            background: linear-gradient(135deg, #d4a574 0%, #c69563 100%);
+            color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .reviews {
+            background-color: #f5f2ef;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        
+        .review-stars {
+            color: #d4a574;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .review-text {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .review-author {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .contact {
+            background-color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            background: #f5f2ef;
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: #d4a574;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-item a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .contact-item a:hover {
+            color: #d4a574;
+        }
+        
+        .contact-item p {
+            font-size: 1.1rem;
+            color: #2d2d2d;
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            min-height: 400px;
+        }
+        
+        .map-container iframe {
+            height: 100%;
+            min-height: 400px;
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .trust-items {
+                gap: 1rem;
+            }
+            
+            .trust-item {
+                font-size: 0.85rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 50px 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Estudio Alma</h1>
+            <p class="hero-subtitle">Tu peluquería de confianza en el corazón de Ponferrada</p>
+            <div class="hero-buttons">
+                <a href="tel:987123456" class="btn btn-primary">Llámanos: 987 123 456</a>
+                <a href="https://wa.me/34987123456" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- BARRA DE CONFIANZA -->
+    <div class="trust-bar">
+        <div class="trust-items">
+            <div class="trust-item">⭐ <strong>4.7/5</strong> en Google</div>
+            <div class="trust-item">👥 <strong>134</strong> clientes satisfechos</div>
+            <div class="trust-item">📍 Años en <strong>Ponferrada</strong></div>
+            <div class="trust-item">💛 Atención <strong>personalizada</strong></div>
+        </div>
+    </div>
+    
+    <!-- SERVICIOS -->
+    <section class="container">
+        <h2 class="section-title">Nuestros servicios</h2>
+        <p class="section-subtitle">Cuidamos cada detalle para que salgas con la mejor versión de ti mismo</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Corte y peinado</h3>
+                <p>Adaptamos tu corte a tu estilo y personalidad. Asesoramiento personalizado para encontrar el look que mejor te sienta.</p>
+                <span class="service-price">Desde 18€</span>
+            </div>
+            
+            <div class="service-card">
+                <h3>Color y mechas</h3>
+                <p>Técnicas modernas con productos de calidad que cuidan tu cabello. Balayage, mechas californianas, tintes personalizados.</p>
+                <span class="service-price">Desde 45€</span>
+            </div>
+            
+            <div class="service-card">
+                <h3>Tratamientos capilares</h3>
+                <p>Devolvemos la vida a tu pelo con tratamientos hidratantes, nutritivos y reparadores. Resultados visibles desde la primera sesión.</p>
+                <span class="service-price">Desde 25€</span>
+            </div>
+            
+            <div class="service-card">
+                <h3>Peinados y recogidos</h3>
+                <p>Para bodas, eventos o cualquier ocasión especial. Diseños elegantes que duran todo el día.</p>
+                <span class="service-price">Desde 35€</span>
+            </div>
+            
+            <div class="service-card">
+                <h3>Barba y afeitado</h3>
+                <p>Servicio completo de arreglo y cuidado de barba. Afeitado tradicional con toalla caliente.</p>
+                <span class="service-price">Desde 12€</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SOBRE NOSOTROS -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Más que una peluquería, un espacio donde te sientes como en casa</h2>
+                    <p>En Estudio Alma llevamos años haciendo lo que nos apasiona: cuidar de las personas que confían en nosotros.</p>
+                    <p>Somos un equipo de profesionales con formación continua, pero sobre todo, somos personas cercanas que escuchan lo que necesitas y te aconsejan con honestidad.</p>
+                    <p>Aquí cada cliente es único. Por eso dedicamos el tiempo necesario a cada servicio, sin prisas, con el cuidado y la atención que te mereces.</p>
+                    <p>Ven a conocernos. Estamos en pleno centro de Ponferrada, en la Calle del Temple. Te esperamos con una sonrisa y un café.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80" alt="Equipo de Estudio Alma">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GALERÍA -->
+    <section class="container">
+        <h2 class="section-title">Nuestro trabajo</h2>
+        <p class="section-subtitle">Cada corte, cada color, hecho con cariño y dedicación</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80" alt="Trabajo realizado en Estudio Alma">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&q=80" alt="Corte y color en Estudio Alma">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80" alt="Peinado en Estudio Alma">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Cliente satisfecho Estudio Alma">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522337094846-8a818192de1f?w=600&q=80" alt="Servicio de peluquería Estudio Alma">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Ambiente acogedor Estudio Alma">
+            </div>
+        </div>
+    </section>
+    
+    <!-- RESEÑAS -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <p class="section-subtitle">La confianza de los vecinos de Ponferrada es nuestro mayor orgullo</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Llevo viniendo a Estudio Alma desde hace años y siempre salgo encantada. Te asesoran muy bien y se nota que les importa que salgas contenta. El trato es cercano y profesional. Totalmente recomendable."</p>
+                    <p class="review-author">— Carmen Rodríguez</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Fui por primera vez hace un mes y repetí sin dudarlo. Me hicieron un cambio de look y acertaron de pleno. Escuchan lo que quieres y te dan su opinión sincera. Además, el ambiente es súper agradable."</p>
+                    <p class="review-author">— Laura Fernández</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"La mejor peluquería de Ponferrada sin duda. Buen precio, excelente atención y un resultado siempre impecable. Mi mujer y yo venimos aquí y no cambiamos por nada. Son como de la familia ya."</p>
+                    <p class="review-author">— Javier Álvarez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACTO -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Ven a visitarnos</h2>
+            <p class="section-subtitle">Estamos en el centro de Ponferrada. Pide cita o pásate a conocernos</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contacto</h3>
+                    
+                    <div class="contact-item">
+                        <strong>Teléfono</strong>
+                        <a href="tel:987123456">987 123 456</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>WhatsApp</strong>
+                        <a href="https://wa.me/34987123456" target="_blank">Enviar mensaje</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Dirección</strong>
+                        <p>Calle del Temple, 8<br>24400 Ponferrada, El Bierzo</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Horario</strong>
+                        <p>Lunes a viernes: 10:00 - 20:00<br>Sábados: 10:00 - 14:00</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps?q=Calle+del+Temple%2C+8%2C+24400+Ponferrada&output=embed" width="100%" height="300" style="border:0" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                Web creada por <a href="#">Hugo Perez · Kaiteck</a>
+            </div>
+            <div class="footer-disclaimer">
+                ⚠️ Demo ilustrativa generada con IA — el contenido no representa al negocio real
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HairSalon",
+        "name": "Estudio Alma",
+        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80",
+        "description": "Peluquería de confianza en Ponferrada. Corte, color, tratamientos y peinados con atención personalizada.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle del Temple, 8",
+            "addressLocality": "Ponferrada",
+            "addressRegion": "El Bierzo",
+            "postalCode": "24400",
+            "addressCountry": "ES"
+        },
+        "telephone": "+34987123456",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "reviewCount": "134"
+        },
+        "priceRange": "€€",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "20:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+            }
+        ]
+    }
+    </script>
+    
+</body>
+</html>
+```
