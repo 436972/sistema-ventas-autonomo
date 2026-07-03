@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental Martínez Guerra | Dentista en Ponferrada, El Bierzo</title>
+    <meta name="description" content="Clínica dental de confianza en Ponferrada. Primera consulta gratuita. Tratamientos sin dolor con tecnología de última generación. Llama al 987 40 18 52.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Clínica Dental Martínez Guerra | Dentista en Ponferrada">
+    <meta property="og:description" content="Tu clínica dental de confianza en El Bierzo. Primera consulta gratuita.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://source.unsplash.com/1200x630/?dentist,clinic,smile">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Clínica Dental Martínez Guerra",
+        "image": "https://source.unsplash.com/1600x900/?dentist,clinic,smile",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C. Ancha, 50",
+            "addressLocality": "Ponferrada",
+            "addressRegion": "León",
+            "postalCode": "24401",
+            "addressCountry": "ES"
+        },
+        "telephone": "+34987401852",
+        "priceRange": "€€€",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "10"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "42.5497",
+            "longitude": "-6.5952"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "20:00"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0A4D68;
+            --secondary: #088395;
+            --accent: #05BFDB;
+            --neutral: #F8F9FA;
+            --text: #1A1A1A;
+            --white: #FFFFFF;
+            --success: #00B894;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            color: #4A5568;
+            font-weight: 300;
+        }
+        
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 77, 104, 0.95) 0%, rgba(8, 131, 149, 0.9) 100%), 
+                        url('https://source.unsplash.com/1600x900/?dentist,clinic,smile') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            padding: 2rem 5%;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            color: var(--white);
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(5, 191, 219, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(5, 191, 219, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+        
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #20BA5A;
+            transform: translateY(-3px);
+        }
+        
+        /* TRUST BAR */
+        .trust-bar {
+            background: var(--neutral);
+            padding: 2rem 5%;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .trust-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .trust-label {
+            font-size: 0.95rem;
+            color: #718096;
+        }
+        
+        .stars {
+            color: #F59E0B;
+            font-size: 1.5rem;
+            letter-spacing: 0.2rem;
+        }
+        
+        /* PROBLEMA */
+        .problema {
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .problema h2 {
+            color: var(--primary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .problema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .problema-card {
+            background: var(--neutral);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .problema-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problema-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* SOLUCIÓN */
+        .solucion {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .solucion h2 {
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+        
+        .solucion p {
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+        }
+        
+        .solucion-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .solucion-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .check-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        /* SERVICIOS */
+        .servicios {
+            background: var(--neutral);
+        }
+        
+        .servicios h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .servicio-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .servicio-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        
+        .servicio-content {
+            padding: 2rem;
+        }
+        
+        .servicio-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .servicio-price {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-top: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* POR QUÉ NOSOTROS */
+        .why-us {
+            background: var(--white);
+        }
+        
+        .why-us h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .why-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .why-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .why-text h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        /* PROCESO */
+        .proceso {
+            background: var(--neutral);
+            text-align: center;
+        }
+        
+        .proceso h2 {
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .proceso-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            position: relative;
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* GALERÍA */
+        .galeria {
+            background: var(--white);
+        }
+        
+        .galeria h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* TESTIMONIOS */
+        .testimonios {
+            background: var(--neutral);
+        }
+        
+        .testimonios h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .testimonio-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .testimonio-stars {
+            color: #F59E0B;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonio-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonio-author {
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .testimonio-location {
+            font-size: 0.95rem;
+            color: #718096;
+        }
+        
+        /* CTA FINAL */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-final h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-final p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .urgency {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .urgency-text {
+            font-size: 1.125rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .form-container h3 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.25rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* CONTACTO */
+        .contacto {
+            background: var(--white);
+        }
+        
+        .contacto h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contacto-info {
+            background: var(--neutral);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .contacto-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contacto-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .contacto-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contacto-item a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contacto-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .mapa {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-disclaimer {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* MOBILE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+            
+            h2 {
+                font-size: 1.875rem;
+            }
+            
+            section {
+                padding: 3rem 5%;
+            }
+            
+            .hero {
+                min-height: 100svh;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 1rem 2rem;
+            }
+            
+            .trust-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        /* SCROLL REVEAL */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .reveal {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tu sonrisa perfecta sin miedo ni dolor</h1>
+            <p class="hero-subtitle">Tecnología láser de última generación y sedación consciente en el corazón de Ponferrada</p>
+            <div class="cta-group">
+                <a href="tel:+34987401852" class="btn btn-primary">📞 Llamar ahora: 987 40 18 52</a>
+                <a href="https://wa.me/34987401852" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="stars">★★★★★</div>
+                <div class="trust-number">5.0/5</div>
+                <div class="trust-label">Valoración Google</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">+15 años</div>
+                <div class="trust-label">Experiencia</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">1ª consulta</div>
+                <div class="trust-label">Gratis y sin compromiso</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">Garantía</div>
+                <div class="trust-label">En todos los tratamientos</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROBLEMA -->
+    <section class="problema">
+        <h2>Sabemos que visitar al dentista no es fácil</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.125rem;">El 60% de los españoles evita ir al dentista por miedo al dolor, precios ocultos o malas experiencias previas</p>
+        
+        <div class="problema-grid">
+            <div class="problema-card">
+                <div class="problema-icon">😰</div>
+                <h3>Miedo al dolor</h3>
+                <p>"¿Me va a doler? ¿Necesitaré anestesia?"</p>
+            </div>
+            <div class="problema-card">
+                <div class="problema-icon">💶</div>
+                <h3>Presupuestos ocultos</h3>
+                <p>"¿Cuánto me va a costar realmente?"</p>
+            </div>
+            <div class="problema-card">
+                <div class="problema-icon">⏰</div>
+                <h3>Urgencias sin atender</h3>
+                <p>"Necesito solución rápida, no cita en 3 semanas"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section class="solucion">
+        <h2>Por eso trabajamos de forma diferente</h2>
+        <p>En Clínica Dental Martínez Guerra apostamos por la transparencia total, tecnología sin dolor y atención el mismo día para urgencias</p>
+        
+        <div class="solucion-features">
+            <div class="solucion-feature">
+                <div class="check-icon">✓</div>
+                <h3>Cero dolor</h3>
+                <p>Láser dental y sedación consciente. Tratamientos sin molestias</p>
+            </div>
+            <div class="solucion-feature">
+                <div class="check-icon">✓</div>
+                <h3>Precio cerrado</h3>
+                <p>Presupuesto detallado antes de empezar. Sin sorpresas</p>
+            </div>
+            <div class="solucion-feature">
+                <div class="check-icon">✓</div>
+                <h3>Urgencias en 24h</h3>
+                <p>Si te duele hoy, te atendemos hoy</p>
+            </div>
+            <div class="solucion-feature">
+                <div class="check-icon">✓</div>
+                <h3>Financiación</h3>
+                <p>Hasta 24 meses sin intereses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios">
+        <h2>Tratamientos que devuelven tu confianza</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <img src="https://source.unsplash.com/800x600/?dental,implant" alt="Implantes dentales" class="servicio-img">
+                <div class="servicio-content">
+                    <h3>Implantes dentales</h3>
+                    <p>Recupera tu sonrisa de forma fija y permanente. Cirugía mínimamente invasiva con tecnología 3D</p>
+                    <p class="servicio-price">Desde 890€/pieza</p>
+                </div>
+            </div>
+            
+            <div class="servicio-card">
+                <img src="https://source.unsplash.com/800x600/?orthodontics,braces" alt="Ortodoncia invisible" class="servicio-img">
+                <div class="servicio-content">
+                    <h3>Ortodoncia invisible</h3>
+                    <p>Alinea tus dientes sin que nadie lo note. Resultados en 6-18 meses</p>
+                    <p class="servicio-price">Desde 1.950€</p>
+                </div>
+            </div>
+            
+            <div class="servicio-card">
+                <img src="https://source.unsplash.com/800x600/?teeth,whitening" alt="Estética dental" class="servicio-img">
+                <div class="servicio-content">
+                    <h3>Estética dental</h3>
+                    <p>Blanqueamiento LED, carillas y diseño de sonrisa digital para resultados naturales</p>
+                    <p class="servicio-price">Desde 195€</p>
+                </div>
+            </div>
+            
+            <div class="servicio-card">
+                <img src="https://source.unsplash.com/800x600/?dental,surgery" alt="Cirugía oral" class="servicio-img">
+                <div class="servicio-content">
+                    <h3>Cirugía oral</h3>
+                    <p>Extracciones, muelas del juicio, injertos. Todo con sedación consciente disponible</p>
+                    <p class="servicio-price">Desde 85€</p>
+                </div>
+            </div>

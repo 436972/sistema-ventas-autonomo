@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Guerrero Peluqueros | Peluquería Premium en Ponferrada, El Bierzo</title>
+    <meta name="description" content="Salón de peluquería premium en Ponferrada. Expertos en color, mechas balayage y cortes personalizados. 5★ en Google con 35 reseñas. Reserva tu cita: 987 41 86 39">
+    <meta property="og:title" content="Laura Guerrero Peluqueros | Peluquería Premium Ponferrada">
+    <meta property="og:description" content="Transforma tu imagen con profesionales del cabello. Especialistas en color y mechas balayage en El Bierzo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://source.unsplash.com/1200x630/?hairdresser,salon,professional">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "name": "Laura Guerrero Peluqueros",
+      "image": "https://source.unsplash.com/1600x900/?hairdresser,salon",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Rio Valcarce",
+        "addressLocality": "Ponferrada",
+        "addressRegion": "León",
+        "postalCode": "24400",
+        "addressCountry": "ES"
+      },
+      "telephone": "+34987418639",
+      "priceRange": "€€€",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "35"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "42.5500",
+        "longitude": "-6.5933"
+      },
+      "url": "https://lauraguerreropeluqueros.com",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --negro: #1a1a1a;
+            --beige: #f5f1ed;
+            --dorado: #c9a961;
+            --gris-oscuro: #4a4a4a;
+            --blanco: #ffffff;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--negro);
+            line-height: 1.7;
+            background-color: var(--blanco);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(74, 74, 74, 0.5) 100%);
+            z-index: 1;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 300;
+            margin: 25px 0 40px;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--dorado);
+            color: var(--negro);
+        }
+        
+        .btn-primary:hover {
+            background-color: #b89851;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--blanco);
+            border: 2px solid var(--blanco);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--blanco);
+            color: var(--negro);
+        }
+        
+        /* TRUST BAR */
+        .trust-bar {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 30px 0;
+        }
+        
+        .trust-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trust-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dorado);
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .trust-label {
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        /* PROBLEMA */
+        .problema {
+            background-color: var(--beige);
+        }
+        
+        .problema-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problema h2 {
+            color: var(--negro);
+            margin-bottom: 30px;
+        }
+        
+        .problema p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--gris-oscuro);
+            margin-bottom: 20px;
+        }
+        
+        /* SOLUCIÓN */
+        .solucion {
+            background-color: var(--blanco);
+        }
+        
+        .solucion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 968px) {
+            .solucion-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .solucion-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .solucion-text h3 {
+            color: var(--dorado);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        .solucion-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--gris-oscuro);
+        }
+        
+        /* SERVICIOS */
+        .servicios {
+            background-color: var(--beige);
+        }
+        
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .servicio-card {
+            background-color: var(--blanco);
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .servicio-card h3 {
+            color: var(--negro);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .servicio-card p {
+            color: var(--gris-oscuro);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .servicio-precio {
+            color: var(--dorado);
+            font-weight: 600;
+            font-size: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* POR QUÉ NOSOTROS */
+        .porque-nosotros {
+            background-color: var(--blanco);
+        }
+        
+        .porque-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+        
+        .porque-item {
+            text-align: center;
+        }
+        
+        .porque-numero {
+            font-size: 4rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--dorado);
+            opacity: 0.3;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .porque-item h3 {
+            color: var(--negro);
+            margin-bottom: 15px;
+        }
+        
+        .porque-item p {
+            color: var(--gris-oscuro);
+            font-size: 1rem;
+        }
+        
+        /* PROCESO */
+        .proceso {
+            background-color: var(--negro);
+            color: var(--blanco);
+        }
+        
+        .proceso h2 {
+            color: var(--blanco);
+            text-align: center;
+        }
+        
+        .proceso-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .proceso-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-numero {
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--dorado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--dorado);
+            margin: 0 auto 25px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .proceso-step h3 {
+            color: var(--blanco);
+            margin-bottom: 15px;
+        }
+        
+        .proceso-step p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+        
+        /* GALERÍA */
+        .galeria {
+            background-color: var(--beige);
+        }
+        
+        .galeria h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+        
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* TESTIMONIOS */
+        .testimonios {
+            background-color: var(--blanco);
+        }
+        
+        .testimonios h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .testimonio-card {
+            background-color: var(--beige);
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        .estrellas {
+            color: var(--dorado);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonio-texto {
+            font-style: italic;
+            color: var(--gris-oscuro);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .testimonio-autor {
+            font-weight: 600;
+            color: var(--negro);
+            margin-bottom: 5px;
+        }
+        
+        .testimonio-ubicacion {
+            font-size: 0.9rem;
+            color: var(--gris-oscuro);
+        }
+        
+        /* CTA FINAL */
+        .cta-final {
+            background-color: var(--negro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-final h2 {
+            color: var(--blanco);
+            margin-bottom: 20px;
+        }
+        
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .formulario-contacto {
+            max-width: 600px;
+            margin: 50px auto 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dorado);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--blanco);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .urgencia {
+            background-color: var(--dorado);
+            color: var(--negro);
+            padding: 15px 25px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* MAPA */
+        .mapa-seccion {
+            background-color: var(--beige);
+        }
+        
+        .mapa-contenido {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        @media (max-width: 968px) {
+            .mapa-contenido {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .info-contacto h2 {
+            margin-bottom: 30px;
+        }
+        
+        .contacto-item {
+            margin-bottom: 25px;
+        }
+        
+        .contacto-item h3 {
+            font-size: 1.2rem;
+            color: var(--dorado);
+            margin-bottom: 10px;
+        }
+        
+        .contacto-item p,
+        .contacto-item a {
+            color: var(--gris-oscuro);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .contacto-item a:hover {
+            color: var(--dorado);
+        }
+        
+        .mapa-container {
+            width: 100%;
+            height: 400px;
+            border: 3px solid var(--blanco);
+        }
+        
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        
+        .footer-content p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        .footer-content a {
+            color: var(--dorado);
+            text-decoration: none;
+        }
+        
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+        
+        /* UTILIDADES */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+        
+        .mt-4 {
+            margin-top: 40px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .trust-content {
+                gap: 20px;
+            }
+            
+            .trust-item {
+                flex: 1 1 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="https://source.unsplash.com/1600x900/?hairdresser,salon,luxury" alt="Laura Guerrero Peluqueros - Salón Premium" class="hero-bg">
+        <div class="hero-content">
+            <h1>Tu cabello merece el mismo cuidado que tu piel</h1>
+            <p class="hero-subtitle">Especialistas en color técnico y cortes personalizados en el corazón de Ponferrada</p>
+            <div class="cta-group">
+                <a href="tel:+34987418639" class="btn btn-primary">📞 Llamar: 987 41 86 39</a>
+                <a href="https://wa.me/34987418639?text=Hola,%20me%20gustaría%20reservar%20una%20cita" class="btn btn-secondary" target="_blank">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-item">
+                    <div class="trust-value">⭐ 5.0</div>
+                    <div class="trust-label">Valoración Google</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-value">35+</div>
+                    <div class="trust-label">Reseñas verificadas</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-value">+15 años</div>
+                    <div class="trust-label">En Ponferrada</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-value">100%</div>
+                    <div class="trust-label">Garantía de resultado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="section problema">
+        <div class="container">
+            <div class="problema-content">
+                <h2>¿Cansada de salir del salón sin el resultado que esperabas?</h2>
+                <p>Sabes lo que quieres: un rubio que no tire a naranja, unas mechas que parezcan naturales, un corte que favorezca tu rostro sin necesidad de explicarlo tres veces.</p>
+                <p>Has probado salones donde no te escuchan, donde el color no dura ni tres lavados, o donde te prometen maravillas y sales decepcionada.</p>
+                <p><strong>El problema no es tu cabello. Es encontrar profesionales que entiendan lo que necesitas antes de que lo digas.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section class="section solucion">
+        <div class="container">
+            <h2 class="text-center">Trabajamos tu cabello como si fuera el nuestro</h2>
+            <div class="solucion-grid">
+                <img src="https://source.unsplash.com/1200x800/?hair,color,professional" alt="Técnica de color profesional" class="solucion-img">
+                <div class="solucion-text">
+                    <h3>Diagnóstico capilar antes de cada servicio</h3>
+                    <p>No tocamos tu cabello sin entender primero su historial, porosidad y estado actual. Cada coloración la formulamos específicamente para ti, no usamos mezclas predefinidas.</p>
+                    
+                    <h3>Técnicas de color avanzado</h3>
+                    <p>Balayage, babylights, mechas efecto sombra, decapage respetuoso. Trabajamos con Wella Professionals y Olaplex para proteger la fibra mientras transformamos el color.</p>
+                    
+                    <h3>Seguimiento post-servicio</h3>
+                    <p>Te explicamos cómo mantener el resultado en casa y te llamamos a las dos semanas para asegurarnos de que todo va perfecto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section servicios">
+        <div class="container">
+            <h2 class="text-center">Servicios especializados</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">✨</div>
+                    <h3>Coloración técnica</h3>
+                    <p>Color global, mechas balayage, babylights, corrección de color. Formulación personalizada según tu tono de piel y estilo de vida.</p>
+                    <div class="servicio-precio">Desde 75€</div>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">✂️</div>
+                    <h3>Corte personalizado</h3>
+                    <p>Análisis de forma de rostro, textura y caída natural. Cortes que funcionan con tu cabello, no contra él.</p>
+                    <div class="servicio-precio">Desde 35€</div>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">💆‍♀️</div>
+                    <h3>Tratamientos capilares</h3>
+                    <p>Keratina, botox capilar, reconstrucción profunda con Olaplex. Resultados visibles desde la primera sesión.</p>
+                    <div class="servicio-precio">Desde 45€</div>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">👰</div>
+                    <h3>Peinados de evento</h3>
+                    <p>Recogidos, ondas, brushing de larga duración. Prueba previa incluida para bodas y eventos especiales.</p>
+                    <div class="servicio-precio">Desde 50€</div>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔥</div>
+                    <h3>Alisado permanente</h3>
+                    <p>Alisado japonés, brasileño o con keratina según tu tipo de rizo. Duración de 4 a 6 meses con mantenimiento adecuado.</p>
+                    <div class="servicio-precio">Desde 120€</div>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">👨</div>
+                    <h3>Barbería</h3>
+                    <p>Corte masculino, arreglo de barba, afeitado tradicional. Atención especializada también para ellos.</p>
+                    <div class="servicio-precio">Desde 20€</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ NOSOTROS -->
+    <section class="section porque-nosotros">
+        <div class="container">
+            <h2 class="text-center">Por qué las clientas repiten</h2>
+            <div class="porque-grid">
+                <div class="porque-item">
+                    <div class="porque-numero">01</div>
+                    <h3>Formación continua certificada</h3>
+                    <p>Laura se forma cada año en Madrid y Barcelona con las últimas técnicas de Wella, Schwarzkopf y L'Oréal Professionnel. No improvisamos con tu cabello.</p>
+                </div>
+                
+                <div class="porque-item">
+                    <div class="porque-numero">02</div>
+                    <h3>Productos profesionales reales</h3>
+                    <p>Usamos exclusivamente líneas de salón: Wella Koleston, Olaplex, Kerastase. No encontrarás estos productos en supermercados porque no se venden ahí.</p>
+                </div>
+                
+                <div class="porque-item">
+                    <div class="porque-numero">03</div>
+                    <h3>Atención personalizada garantizada</h3>
+                    <p>Citas con tiempo real entre clientes. No te atenderán tres personas distintas. Laura supervisa personalmente cada servicio de color.</p>
+                </div>
+                
+                <div class="porque-item">
+                
