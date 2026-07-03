@@ -4,3 +4,11 @@ __pycache__/
 *.pyc
 .env
 .env
+
+# Archivos internos Kaiteck
+CLAUDE.md
+KAITECK_CLAUDE_CODE_PROMPT.md
+SUPER_PROMPT_GENERADOR_WEBS.md
+Kaiteck_Estrategia_Dominacion_Digital.docx
+kaiteck_mejorado.html
+web/
