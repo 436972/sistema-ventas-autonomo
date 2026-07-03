@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moda Bierzo | Tienda de Ropa en Ponferrada, El Bierzo</title>
-    <meta name="description" content="Tienda de moda en Ponferrada. Encuentra tu estilo con prendas seleccionadas, asesoramiento personalizado y marcas exclusivas. Visítanos en Calle Gil y Carrasco, 3.">
+    <meta name="description" content="Moda seleccionada para el Bierzo. Prendas de calidad, asesoramiento personal y estilo propio. Visítanos en Ponferrada o contacta por WhatsApp.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ClothingStore",
         "name": "Moda Bierzo",
-        "image": "https://source.unsplash.com/1600x900/?fashion,store,boutique",
+        "image": "https://picsum.photos/seed/fashion-store/1200/630",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Calle Gil y Carrasco, 3",
@@ -29,84 +29,65 @@
             "ratingValue": "4.6",
             "reviewCount": "89"
         },
-        "priceRange": "€€€",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "10:00",
-            "closes": "20:30"
-        }
+        "priceRange": "€€-€€€",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "14:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "17:00",
+                "closes": "20:30"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+            }
+        ]
     }
     </script>
-
+    
+    <meta property="og:title" content="Moda Bierzo | Tienda de Ropa en Ponferrada">
+    <meta property="og:description" content="Moda seleccionada para el Bierzo. Prendas de calidad, asesoramiento personal y estilo propio.">
+    <meta property="og:image" content="https://picsum.photos/seed/fashion-store/1200/630">
+    <meta property="og:type" content="website">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         :root {
-            --color-primary: #1a1a1a;
-            --color-secondary: #c9a885;
-            --color-accent: #8b7355;
-            --color-light: #f8f6f3;
-            --color-white: #ffffff;
-            --font-headline: 'Cormorant Garamond', serif;
+            --color-primary: #D4B5A0;
+            --color-secondary: #1a1a1a;
+            --color-accent: #C9A876;
+            --color-light: #F8F6F3;
+            --color-white: #FFFFFF;
+            --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Montserrat', sans-serif;
         }
-
+        
         body {
             font-family: var(--font-body);
-            color: var(--color-primary);
+            color: var(--color-secondary);
             line-height: 1.7;
             background: var(--color-white);
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
-
-        h1, h2, h3 {
-            font-family: var(--font-headline);
-            font-weight: 300;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: 0.75rem;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            padding: 6rem 0;
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 4rem 0;
-            }
-        }
-
-        /* HEADER */
-        header {
+        
+        /* HERO SECTION */
+        .hero {
             position: relative;
             height: 100vh;
-            min-height: 700px;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -114,7 +95,18 @@
             color: var(--color-white);
             overflow: hidden;
         }
-
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.5), rgba(212, 181, 160, 0.3));
+            z-index: 1;
+        }
+        
         .hero-bg {
             position: absolute;
             top: 0;
@@ -122,754 +114,988 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -2;
+            z-index: 0;
         }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.5), rgba(139, 115, 85, 0.3));
-            z-index: -1;
-        }
-
+        
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 900px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
+            padding: 0 30px;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
-
-        .hero-content p {
+        
+        .hero-subtitle {
             font-size: clamp(1.1rem, 2vw, 1.4rem);
-            margin-bottom: 2.5rem;
             font-weight: 300;
-            letter-spacing: 0.03em;
+            margin-bottom: 45px;
+            letter-spacing: 0.5px;
+            opacity: 0.95;
         }
-
+        
         .cta-group {
             display: flex;
-            gap: 1rem;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2.5rem;
         }
-
+        
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1.2rem 2.5rem;
+            gap: 10px;
+            padding: 18px 40px;
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 500;
             text-decoration: none;
             border-radius: 2px;
             transition: all 0.3s ease;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            cursor: pointer;
-            border: none;
+            font-size: 0.9rem;
         }
-
+        
         .btn-primary {
-            background: var(--color-secondary);
-            color: var(--color-primary);
+            background: var(--color-accent);
+            color: var(--color-secondary);
+            border: 2px solid var(--color-accent);
         }
-
+        
         .btn-primary:hover {
-            background: #d4b595;
+            background: transparent;
+            color: var(--color-white);
+            border-color: var(--color-white);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 168, 133, 0.3);
         }
-
+        
         .btn-secondary {
             background: transparent;
             color: var(--color-white);
             border: 2px solid var(--color-white);
         }
-
+        
         .btn-secondary:hover {
             background: var(--color-white);
-            color: var(--color-primary);
+            color: var(--color-secondary);
             transform: translateY(-2px);
         }
-
+        
         /* TRUST BAR */
         .trust-bar {
-            background: var(--color-primary);
+            background: var(--color-secondary);
             color: var(--color-white);
-            padding: 2rem 0;
+            padding: 30px 20px;
         }
-
-        .trust-items {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+        
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             text-align: center;
         }
-
+        
         .trust-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
         }
-
-        .trust-value {
+        
+        .trust-icon {
             font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--color-secondary);
+            color: var(--color-accent);
         }
-
+        
+        .trust-value {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+        
         .trust-label {
             font-size: 0.9rem;
-            opacity: 0.9;
             font-weight: 300;
+            opacity: 0.9;
         }
-
-        .stars {
-            color: var(--color-secondary);
-            font-size: 1.2rem;
+        
+        /* SECTION STYLES */
+        section {
+            padding: 100px 30px;
         }
-
-        /* PROBLEMA */
-        .problema {
+        
+        .section-light {
             background: var(--color-light);
-            text-align: center;
         }
-
-        .problema-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .problema h2 {
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .problema p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #4a4a4a;
-            margin-bottom: 1rem;
-        }
-
-        /* SOLUCIÓN */
-        .solucion {
+        
+        .section-white {
             background: var(--color-white);
         }
-
-        .solucion-grid {
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--color-secondary);
+        }
+        
+        .section-description {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* PROBLEMA SECTION */
+        .problema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .problema-item {
+            padding: 40px 30px;
+            background: var(--color-white);
+            border-left: 3px solid var(--color-accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .problema-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .problema-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .problema-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--color-secondary);
+        }
+        
+        .problema-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* SOLUCIÓN SECTION */
+        .solucion-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 60px;
             align-items: center;
         }
-
-        @media (max-width: 968px) {
-            .solucion-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .solucion-text h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .solucion-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #4a4a4a;
-        }
-
-        .solucion-img {
+        
+        .solucion-image {
             width: 100%;
             height: 600px;
             object-fit: cover;
             border-radius: 2px;
         }
-
+        
+        .solucion-text h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--color-secondary);
+        }
+        
+        .solucion-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .solucion-features {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .solucion-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .solucion-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .checkmark {
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
         /* SERVICIOS */
-        .servicios {
-            background: var(--color-light);
-        }
-
-        .servicios-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 40px;
         }
-
+        
         .servicio-card {
             background: var(--color-white);
-            padding: 2.5rem;
-            border-radius: 2px;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .servicio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-
-        .servicio-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        
+        .servicio-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
         }
-
-        .servicio-card h3 {
-            color: var(--color-primary);
-            margin-bottom: 1rem;
+        
+        .servicio-content {
+            padding: 35px 30px;
         }
-
-        .servicio-card p {
+        
+        .servicio-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--color-secondary);
+        }
+        
+        .servicio-content p {
             color: #666;
+            margin-bottom: 20px;
             line-height: 1.7;
-            margin-bottom: 1rem;
         }
-
+        
+        .servicio-highlight {
+            color: var(--color-accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
         /* POR QUÉ NOSOTROS */
-        .por-que {
-            background: var(--color-white);
-        }
-
-        .por-que-intro {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .razones-grid {
+        .diferenciadores-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
         }
-
-        .razon {
+        
+        .diferenciador {
             text-align: center;
-            padding: 2rem;
+            padding: 30px 20px;
         }
-
-        .razon-numero {
-            display: inline-block;
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
+        
+        .diferenciador-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: var(--color-light);
             border-radius: 50%;
-            background: var(--color-secondary);
-            color: var(--color-white);
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--color-accent);
         }
-
-        .razon h3 {
-            margin-bottom: 1rem;
-            color: var(--color-primary);
+        
+        .diferenciador h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--color-secondary);
         }
-
-        .razon p {
+        
+        .diferenciador p {
             color: #666;
             line-height: 1.7;
         }
-
+        
         /* PROCESO */
-        .proceso {
-            background: var(--color-primary);
-            color: var(--color-white);
-        }
-
-        .proceso h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-            color: var(--color-white);
-        }
-
         .proceso-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 40px;
+            margin-top: 60px;
         }
-
+        
         .step {
-            text-align: center;
             position: relative;
+            padding: 40px 30px;
+            background: var(--color-white);
+            border-top: 4px solid var(--color-accent);
+            text-align: center;
         }
-
-        .step-numero {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
+        
+        .step-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--color-accent);
+            color: var(--color-white);
             border-radius: 50%;
-            background: var(--color-secondary);
-            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
             font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
         }
-
+        
         .step h3 {
-            margin-bottom: 1rem;
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin: 20px 0 15px;
             color: var(--color-secondary);
         }
-
+        
         .step p {
-            opacity: 0.9;
+            color: #666;
             line-height: 1.7;
         }
-
+        
         /* GALERÍA */
-        .galeria {
-            background: var(--color-light);
-        }
-
-        .galeria h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: 20px;
         }
-
+        
         .galeria-item {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 1;
-            border-radius: 2px;
+            padding-bottom: 100%;
+            cursor: pointer;
         }
-
+        
         .galeria-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-
+        
         .galeria-item:hover img {
             transform: scale(1.1);
         }
-
+        
         /* TESTIMONIOS */
-        .testimonios {
-            background: var(--color-white);
-        }
-
-        .testimonios h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
         .testimonios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 40px;
+            margin-top: 60px;
         }
-
+        
         .testimonio {
-            background: var(--color-light);
-            padding: 2.5rem;
-            border-radius: 2px;
+            background: var(--color-white);
+            padding: 40px 35px;
             position: relative;
+            border-left: 3px solid var(--color-accent);
         }
-
+        
         .testimonio-stars {
-            color: var(--color-secondary);
+            color: var(--color-accent);
             font-size: 1.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
         }
-
-        .testimonio-texto {
-            font-style: italic;
-            color: #4a4a4a;
-            margin-bottom: 1.5rem;
+        
+        .testimonio-text {
+            font-size: 1.05rem;
+            color: #555;
             line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
         }
-
-        .testimonio-autor {
-            font-weight: 600;
-            color: var(--color-primary);
+        
+        .testimonio-author {
+            font-weight: 500;
+            color: var(--color-secondary);
+            margin-bottom: 5px;
         }
-
-        .testimonio-ubicacion {
+        
+        .testimonio-location {
             font-size: 0.9rem;
-            color: #888;
+            color: #999;
         }
-
+        
         /* CTA FINAL */
         .cta-final {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(212, 181, 160, 0.9)), url('https://picsum.photos/seed/fashion-cta/1600/900');
+            background-size: cover;
+            background-position: center;
             color: var(--color-white);
             text-align: center;
-            padding: 6rem 0;
+            padding: 100px 30px;
         }
-
+        
         .cta-final h2 {
-            color: var(--color-white);
-            margin-bottom: 1.5rem;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 25px;
         }
-
+        
         .cta-final p {
             font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 50px;
             opacity: 0.95;
         }
-
-        .cta-urgencia {
+        
+        .cta-final .cta-group {
+            margin-bottom: 40px;
+        }
+        
+        .telefono-destacado {
             display: inline-block;
-            background: rgba(201, 168, 133, 0.2);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            margin-bottom: 2.5rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-
-        .contacto-directo {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .contacto-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contacto-item a {
-            color: var(--color-white);
-            text-decoration: none;
-            font-size: 2rem;
+            font-family: var(--font-display);
+            font-size: 2.5rem;
             font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+            margin-top: 20px;
             transition: color 0.3s ease;
         }
-
-        .contacto-item a:hover {
-            color: var(--color-secondary);
+        
+        .telefono-destacado:hover {
+            color: var(--color-white);
         }
-
-        .contacto-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
+        
+        /* MAPA */
+        .mapa-section {
+            padding: 0;
         }
-
-        /* CÓMO LLEGAR */
-        .como-llegar {
-            background: var(--color-light);
-        }
-
-        .llegar-grid {
+        
+        .mapa-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        @media (max-width: 968px) {
-            .llegar-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .llegar-info h2 {
-            margin-bottom: 2rem;
-        }
-
-        .info-item {
-            margin-bottom: 2rem;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-valor {
-            font-size: 1.2rem;
-            color: var(--color-primary);
-        }
-
-        .info-valor a {
-            color: var(--color-primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .info-valor a:hover {
-            color: var(--color-accent);
-        }
-
-        .mapa-container {
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: 3rem 0 1.5rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 2rem;
-        }
-
-        .footer-credit {
-            opacity: 0.7;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-credit a {
-            color: var(--color-secondary);
-            text-decoration: none;
-        }
-
-        .footer-disclaimer {
-            background: rgba(201, 168, 133, 0.1);
-            padding: 1rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            opacity: 0.8;
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
         }
-
-        /* WHATSAPP FLOAT */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-        }
-
-        .whatsapp-float a {
+        
+        .mapa-info {
+            padding: 80px 60px;
+            background: var(--color-secondary);
+            color: var(--color-white);
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
         }
-
-        .whatsapp-float a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        
+        .mapa-info h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--color-accent);
         }
-
-        .whatsapp-float svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            margin-top: 5px;
+        }
+        
+        .info-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .info-content p, .info-content a {
+            font-size: 1.15rem;
+            color: var(--color-white);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .info-content a:hover {
+            color: var(--color-accent);
+        }
+        
+        .mapa-frame {
+            min-height: 500px;
+        }
+        
+        .mapa-frame iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--color-secondary);
+            color: var(--color-white);
+            padding: 60px 30px 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--color-accent);
+        }
+        
+        .footer-credits {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer-credits a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        .footer-credits a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-disclaimer {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .solucion-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .mapa-container {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
+            .hero {
+                min-height: 500px;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .trust-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .proceso-steps,
+            .diferenciadores-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .telefono-destacado {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
-
     <!-- HERO -->
-    <header>
-        <img src="https://source.unsplash.com/1600x900/?fashion,boutique,clothing" alt="Moda Bierzo Ponferrada" class="hero-bg">
-        <div class="hero-overlay"></div>
+    <section class="hero">
+        <img src="https://picsum.photos/seed/fashion-boutique/1600/900" alt="Moda Bierzo - Tienda de ropa en Ponferrada" class="hero-bg">
         <div class="hero-content">
-            <h1>Encuentra tu estilo en el corazón del Bierzo</h1>
-            <p>Moda seleccionada, asesoramiento personalizado y marcas exclusivas que no encontrarás en centros comerciales</p>
+            <h1>Tu estilo no está en las tendencias</h1>
+            <p class="hero-subtitle">Descubre prendas seleccionadas que definen quién eres, con asesoramiento personal en el corazón del Bierzo</p>
             <div class="cta-group">
-                <a href="tel:+34987654321" class="btn btn-primary">Llamar ahora: 987 654 321</a>
-                <a href="https://wa.me/34987654321" class="btn btn-secondary">Escribir por WhatsApp</a>
+                <a href="tel:+34987654321" class="btn btn-primary">📞 Llamar ahora</a>
+                <a href="https://wa.me/34987654321" class="btn btn-secondary" target="_blank">💬 WhatsApp</a>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="container">
-            <div class="trust-items">
-                <div class="trust-item">
-                    <div class="stars">★★★★★</div>
-                    <div class="trust-value">4.6/5</div>
-                    <div class="trust-label">Valoración Google</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-value">89</div>
-                    <div class="trust-label">Clientes satisfechos</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-value">+15 años</div>
-                    <div class="trust-label">En Ponferrada</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-value">100%</div>
-                    <div class="trust-label">Cambios sin problema</div>
-                </div>
+    <section class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon">⭐</div>
+                <div class="trust-value">4.6/5</div>
+                <div class="trust-label">89 valoraciones Google</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">👗</div>
+                <div class="trust-value">+15 años</div>
+                <div class="trust-label">Vistiendo el Bierzo</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✨</div>
+                <div class="trust-value">Selección</div>
+                <div class="trust-label">Marcas premium y emergentes</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🎯</div>
+                <div class="trust-value">Personal</div>
+                <div class="trust-label">Asesoramiento personalizado</div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- PROBLEMA -->
-    <section class="problema">
+    <section class="section-light">
         <div class="container">
-            <div class="problema-content">
-                <h2>¿Cansada de las mismas tiendas de siempre?</h2>
-                <p>Entras en una tienda de cadena y ves lo mismo que en cualquier ciudad. Sales sin comprar porque nada te representa.</p>
-                <p>O peor: compras algo que has visto en otras diez personas la misma semana.</p>
-                <p>Buscas ropa con personalidad, que te haga sentir única, pero no tienes tiempo de recorrer media ciudad probándote prendas que no te quedan bien ni se adaptan a tu cuerpo.</p>
+            <div class="section-header">
+                <div class="section-subtitle">El problema real</div>
+                <h2 class="section-title">¿Te suena familiar?</h2>
+            </div>
+            <div class="problema-grid">
+                <div class="problema-item">
+                    <div class="problema-icon">😕</div>
+                    <h3>Todo igual en todas las tiendas</h3>
+                    <p>Las mismas prendas de siempre, las mismas marcas de cadena. Nada que te haga sentir especial o diferente.</p>
+                </div>
+                <div class="problema-item">
+                    <div class="problema-icon">🤷</div>
+                    <h3>Nadie te ayuda realmente</h3>
+                    <p>Entras en una tienda y te quedas sola navegando perchas sin criterio. O peor: te atienden con prisa y sin conocerte.</p>
+                </div>
+                <div class="problema-item">
+                    <div class="problema-icon">😔</div>
+                    <h3>Compras por impulso y no lo usas</h3>
+                    <p>Llega a casa, no combina con nada de tu armario. Te lo pruebas una vez y se queda colgado para siempre.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- SOLUCIÓN -->
-    <section class="solucion">
+    <section class="section-white">
         <div class="container">
-            <div class="solucion-grid">
-                <div class="solucion-text">
-                    <h2>Por eso seleccionamos cada prenda pensando en ti</h2>
-                    <p>En Moda Bierzo no vendemos colecciones masivas. Elegimos marcas que no están en todos lados, prendas con diseño y calidad que duran temporadas.</p>
-                    <p><strong>Te asesoramos de verdad:</strong> conocemos cada tejido, cada corte, y sabemos qué te va a favorecer antes de que entres al probador.</p>
-                    <p>No es solo comprar ropa. Es encontrar tu armario ideal con alguien que entiende tu estilo y tu día a día.</p>
-                    <p>Muchas clientas vienen buscando una prenda y salen con un look completo que les encanta. Otras vienen sin idea clara y descubren su estilo con nuestra ayuda.</p>
-                </div>
+            <div class="solucion-content">
                 <div>
-                    <img src="https://source.unsplash.com/1200x800/?fashion,woman,style" alt="Asesoramiento personalizado Moda Bierzo" class="solucion-img">
+                    <img src="https://picsum.photos/seed/fashion-interior/1200/800" alt="Interior Moda Bierzo" class="solucion-image">
+                </div>
+                <div class="solucion-text">
+                    <div class="section-subtitle">La diferencia</div>
+                    <h3>Por qué Moda Bierzo no es una tienda más</h3>
+                    <p>No vendemos ropa. Creamos armarios coherentes con tu vida real. Cada prenda que entra en la tienda pasa un filtro: ¿es versátil? ¿resiste el paso del tiempo? ¿le va a cambiar el día a alguien?</p>
+                    <p>Nuestras clientas vuelven porque saben que aquí no pierden tiempo. Saben que las prendas que se llevan las van a usar de verdad.</p>
+                    <ul class="solucion-features">
+                        <li><span class="checkmark">✓</span> Selección curada: solo lo que realmente vale la pena</li>
+                        <li><span class="checkmark">✓</span> Asesoramiento real: te conocemos, sabemos qué te queda bien</li>
+                        <li><span class="checkmark">✓</span> Prendas atemporales que combinan entre sí</li>
+                        <li><span class="checkmark">✓</span> Marcas que no encuentras en el centro comercial</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SERVICIOS -->
-    <section class="servicios">
+    <section class="section-light">
         <div class="container">
-            <div class="servicios-intro">
-                <h2>Lo que encontrarás en nuestra tienda</h2>
+            <div class="section-header">
+                <div class="section-subtitle">Qué encontrarás</div>
+                <h2 class="section-title">Nuestra colección</h2>
+                <p class="section-description">Cada temporada seleccionamos piezas que funcionan solas o combinadas. Nada sobra, todo tiene sentido en tu armario.</p>
             </div>
             <div class="servicios-grid">
                 <div class="servicio-card">
-                    <div class="servicio-icon">👗</div>
-                    <h3>Moda mujer</h3>
-                    <p>Colecciones exclusivas de marcas españolas e italianas. Desde casual elegante hasta looks de fiesta. Tallas 36 a 46.</p>
+                    <img src="https://picsum.photos/seed/fashion-woman-1/800/600" alt="Ropa de mujer" class="servicio-image">
+                    <div class="servicio-content">
+                        <h3>Mujer</h3>
+                        <p>Desde piezas de oficina que no parecen de oficina hasta looks de fin de semana que te hacen sentir tú misma.</p>
+                        <span class="servicio-highlight">Vestidos, blusas, pantalones, abrigos</span>
+                    </div>
                 </div>
                 <div class="servicio-card">
-                    <div class="servicio-icon">👔</div>
-                    <h3>Moda hombre</h3>
-                    <p>Camisas, pantalones, americanas y complementos. Estilo contemporáneo para hombres que cuidan los detalles.</p>
+                    <img src="https://picsum.photos/seed/fashion-man-1/800/600" alt="Ropa de hombre" class="servicio-image">
+                    <div class="servicio-content">
+                        <h3>Hombre</h3>
+                        <p>Básicos bien hechos y piezas con carácter. Para quien no quiere pensar cada mañana qué ponerse.</p>
+                        <span class="servicio-highlight">Camisas, chaquetas, denim, complementos</span>
+                    </div>
                 </div>
                 <div class="servicio-card">
-                    <div class="servicio-icon">✨</div>
-                    <h3>Asesoramiento personal</h3>
-                    <p>Te ayudamos a crear tu fondo de armario o a encontrar ese look especial. Sin prisas, sin presión.</p>
+                    <img src="https://picsum.photos/seed/fashion-accessories/800/600" alt="Complementos" class="servicio-image">
+                    <div class="servicio-content">
+                        <h3>Complementos</h3>
+                        <p>El detalle que transforma cualquier look. Bolsos, pañuelos, cinturones y joyas seleccionadas a mano.</p>
+                        <span class="servicio-highlight">Piezas únicas que marcan diferencia</span>
+                    </div>
                 </div>
                 <div class="servicio-card">
-                    <div class="servicio-icon">🎁</div>
-                    <h3>Complementos seleccionados</h3>
-                    <p>Bolsos, pañuelos, cinturones y bisutería que completan tu estilo. Cada temporada renovamos la selección.</p>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">🔄</div>
-                    <h3>Cambios sin complicación</h3>
-                    <p>Si la prenda no te convence en casa, la cambias. Queremos que estés 100% segura de tu compra.</p>
-                </div>
-                <div class="servicio-card">
-                    <div class="servicio-icon">📱</div>
-                    <h3>Reserva por WhatsApp</h3>
-                    <p>¿Viste algo en escaparate? Mándanos foto y te lo guardamos o te enviamos tallas y colores disponibles.</p>
+                    <img src="https://picsum.photos/seed/fashion-special/800/600" alt="Eventos especiales" class="servicio-image">
+                    <div class="servicio-content">
+                        <h3>Ocasiones especiales</h3>
+                        <p>Bodas, bautizos, cenas importantes. Te ayudamos a brillar sin disfrazarte.</p>
+                        <span class="servicio-highlight">Asesoramiento completo de look</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- POR QUÉ NOSOTROS -->
-    <section class="por-que">
+    <section class="section-white">
         <div class="container">
-            <div class="por-que-intro">
-                <h2>Por qué comprar aquí y no en otro sitio</h2>
+            <div class="section-header">
+                <div class="section-subtitle">Nuestra promesa</div>
+                <h2 class="section-title">Lo que nos diferencia de verdad</h2>
             </div>
-            <div class="razones-grid">
-                <div class="razon">
-                    <div class="razon-numero">1</div>
-                    <h3>Marcas que no verás en grandes superficies</h3>
-                    <p>Trabajamos con diseñadores españoles y firmas europeas de distribución limitada. Tu ropa no la lleva medio Ponferrada.</p>
+            <div class="diferenciadores-grid">
+                <div class="diferenciador">
+                    <div class="diferenciador-icon">👁️</div>
+                    <h3>Ojo entrenado</h3>
+                    <p>15 años seleccionando moda. Sabemos qué funciona, qué queda bien y qué es puro marketing.</p>
                 </div>
-                <div class="razon">
-                    <div class="razon-numero">2</div>
-                    <h3>Conocemos cada prenda que vendemos</h3>
-                    <p>No somos dependientas, somos expertas. Sabemos qué tejidos encogen, cuáles disimulan, qué cortes favorecen a cada silueta.</p>
+                <div class="diferenciador">
+                    <div class="diferenciador-icon">🤝</div>
+                    <h3>Te conocemos</h3>
+                    <p>No vendemos lo que nos sobra. Recordamos tu estilo, tus colores, qué te llevaste la última vez. Atención de boutique real.</p>
                 </div>
-                <div class="razon">
-                    <div class="razon-numero">3</div>
-                    <h3>Atención real, no protocolo de cadena</h3>
-                    <p>Aquí no hay guiones comerciales. Te tratamos como a una amiga que viene a renovar su armario. Con honestidad y buen criterio.</p>
+                <div class="diferenciador">
+                    <div class="diferenciador-icon">🎨</div>
+                    <h3>Exclusividad real</h3>
+                    <p>Traemos marcas que no están en todas partes. Piezas limitadas, diseñadores emergentes, colecciones especiales.</p>
                 </div>
-                <div class="razon">
-                    <div class="razon-numero">4</div>
-                    <h3>En el centro de Ponferrada desde 2008</h3>
-                    <p>Más de 15 años vistiendo a mujeres del Bierzo. Muchas clientas nos conocen desde que abrimos y siguen confiando en nosotras.</p>
+                <div class="diferenciador">
+                    <div class="diferenciador-icon">♻️</div>
+                    <h3>Calidad sobre cantidad</h3>
+                    <p>Mejor tener 10 prendas perfectas que 50 mediocres. Te ayudamos a crear un armario inteligente y duradero.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PROCESO -->
-    <section class="proceso">
+    <section class="section-light">
         <div class="container">
-            <h2>Cómo trabajamos contigo</h2>
+            <div class="section-header">
+                <div class="section-subtitle">Cómo trabajamos</div>
+                <h2 class="section-title">Tu experiencia en Moda Bierzo</h2>
+            </div>
             <div class="proceso-steps">
                 <div class="step">
-                    <div class="step-numero">1</div>
-                    <h3>Nos cuentas qué buscas</h3>
-                    <p>O vienes a curiosear sin más. Te preguntamos tu estilo, ocasiones de uso, colores favoritos. Sin compromiso.</p>
+                    <div class="step-number">1</div>
+                    <h3>Ven sin prisa</h3>
+                    <p>Pásate cuando quieras. Si prefieres atención sin distracciones, llámanos y reservamos un hueco para ti sola.</p>
                 </div>
                 <div class="step">
-                    <div class="step-numero">2</div>
-                    <h3>Te enseñamos opciones reales</h3>
-                    <p>No te llenamos el probador de 20 prendas. Seleccionamos lo que creemos que te va a quedar bien de verdad.</p>
+                    <div class="step-number">2</div>
+                    <h3>Hablamos de ti</h3>
+                    <p>¿Qué ocasión? ¿Qué necesitas? ¿Qué te gusta de tu armario actual? Así acertamos desde el primer perchero.</p>
                 </div>
                 <div class="step">
-                    <div class="step-numero">3</div>
-                    <h3>Pruebas sin prisas</h3>
-                    <p>El probador es tuyo el tiempo que necesites. Te aconsejamos combinaciones, tallas alternativas, ajustes posibles.</p>
+                    <div class="step-number">3</div>
+                    <h3>Selección personalizada</h3>
+                    <p>Te enseñamos opciones que sabemos que te van a funcionar. Te explicamos por qué cada prenda merece la pena.</p>
                 </div>
                 <div class="step">
-                    <div class="step-numero">4</div>
-                    <h3>Decides con tranquilidad</h3>
-                    <p>Compras lo que te convence. Lo demás lo guardamos por si cambias de opinión. Y si no te
+                    <div class="step-number">4</div>
+                    <h3>Te vas segura</h3>
+                    <p>Solo compras si estás convencida. Y si en casa lo piensas mejor, hablamos. Aquí no hay letra pequeña.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Inspiración</div>
+                <h2 class="section-title">Nuestras propuestas</h2>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/seed/fashion-look-1/600/600" alt="Look 1 Moda Bierzo">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/seed/fashion-look-2/600/600" alt="Look 2 Moda Bierzo">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/seed/fashion-look-3/600/600" alt="Look 3 Moda Bierzo">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/seed/fashion-look-4/600/600" alt="Look 4 Moda Bierzo">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/seed/fashion-look-5/600/600" alt="Look 5 Moda Bierzo">
+                </div>
+                <div class="galeria-item">
+                    <img src="https://picsum.photos/seed/fashion-look-6/600/600" alt="Look 6 Moda Bierzo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Clientas reales</div>
+                <h2 class="section-title">Lo que dicen de nosotras</h2>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonio-text">"Fui a última hora para una boda que tenía al día siguiente. En media hora me tenían todo: vestido, zapatos, bolso... y me quedaba perfecto. Me salvaron la vida."</p>
+                    <div class="testimonio-author">Carmen Rodríguez</div>
+                    <div class="testimonio-location">Ponferrada Centro</div>
+                </div>
+                <div class="testimonio">
+                    <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonio-text">"Llevo años comprando aquí. Ya saben lo que me gusta y siempre aciertan. Lo mejor es que todas las prendas combinan entre sí, mi armario por fin tiene sentido."</p>
+                    <div class="testimonio-author">Laura Fernández</div>
+                    <div class="testimonio-location">Cuatrovientos</div>
+                </div>
+                <div class="testimonio">
+                    <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonio-text">"Mi mujer me compra aquí la ropa desde hace años y siempre queda bien. Ahora voy yo solo porque me asesoran genial y no pierdo tiempo buscando."</p>
+                    <div class="testimonio-author">Miguel Álvarez</div>
+                    <div class="testimonio-location">Flores del Sil</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Renueva tu armario con cabeza</h2>
+            <p>Pásate por la tienda o llámanos para una cita sin compromiso</p>
+            <div class="cta-group">
+                <a href="tel:+34987654321" class="btn btn-primary">📞 Llamar ahora</a>
+                <a href="https://wa.me/34987654321" class="btn btn-secondary" target="_blank">💬 WhatsApp</a>
+            </div>
+            <a href="tel:+34987654321" class="telefono-destacado">987 654 321</a>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="mapa-section">
+        <div class="mapa-container">
+            <div class="mapa-info">
+                <h2>Visítanos</h2>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Dirección</h3>
+                        <p>Calle Gil y Carrasco, 3<br>24400 Ponferrada, León</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Teléfono</h3>
+                        <p><a href="tel:+34987654321">987 654 321</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div class="info-content">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/34987654321" target="_blank">Enviar mensaje</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                        <h3>Horario</h3>
+                        <p>L-V: 10:00-14:00 · 17:00-20:30<br>Sábados: 10:00-14:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mapa-frame">
+                <iframe src="https://www.google.com/maps?q=Calle+Gil+y+Carrasco%2C+3%2C+24400+Ponferrada&output=embed" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">Moda Bierzo</div>
+            <p>Tu tienda de moda en Ponferrada desde 2008</p>
+            
+            <div class="footer-credits">
+                <p>Web diseñada por <a href="https://kaiteck.com" target="_blank">Kaiteck</a> · kaiteck.com</p>
+                <div class="footer-disclaimer">
+                    ⚠️ Demo ilustrativa generada con IA — el contenido no representa al negocio real
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+```

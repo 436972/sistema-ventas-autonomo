@@ -1,858 +1,621 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TALLERES CARRACEDO S.L. | Taller Mecánico en Ponferrada, El Bierzo</title>
-    <meta name="description" content="Taller mecánico de confianza en Ponferrada. Presupuestos transparentes, diagnóstico gratuito y 4.6★ en Google. Av. de Portugal 291. Llama al 987 42 86 60.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="TALLERES CARRACEDO S.L. | Taller Mecánico en Ponferrada">
-    <meta property="og:description" content="Taller mecánico de confianza en Ponferrada. Presupuestos transparentes y diagnóstico gratuito.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://source.unsplash.com/1200x630/?mechanic,garage,professional">
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutoRepair",
-      "name": "TALLERES CARRACEDO S.L.",
-      "image": "https://source.unsplash.com/1600x900/?mechanic,garage",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. de Portugal, 291",
-        "addressLocality": "Ponferrada",
-        "addressRegion": "León",
-        "postalCode": "24403",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "42.5497",
-        "longitude": "-6.5985"
-      },
-      "telephone": "+34987428660",
-      "priceRange": "€€€",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.6",
-        "reviewCount": "58"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      }
-    }
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #1a2a4e;
-            --accent: #FFB800;
-            --trust: #2c5aa0;
-            --neutral: #4a5568;
-            --light: #f7fafc;
-            --white: #ffffff;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--neutral);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Outfit', sans-serif;
-            color: var(--primary);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        /* HERO */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 42, 78, 0.92) 0%, rgba(44, 90, 160, 0.85) 100%);
-            z-index: 1;
-        }
-        
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            padding: 0 20px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            margin-bottom: 3rem;
-            color: rgba(255, 255, 255, 0.95);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2.5rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-family: 'Outfit', sans-serif;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: var(--primary);
-            box-shadow: 0 8px 20px rgba(255, 184, 0, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: #ffca3a;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(255, 184, 0, 0.4);
-        }
-        
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--light);
-            transform: translateY(-2px);
-        }
-        
-        .btn-whatsapp {
-            background: #25D366;
-            color: var(--white);
-        }
-        
-        .btn-whatsapp:hover {
-            background: #1fb855;
-            transform: translateY(-2px);
-        }
-        
-        /* TRUST BAR */
-        .trust-bar {
-            background: var(--primary);
-            color: var(--white);
-            padding: 2rem 20px;
-        }
-        
-        .trust-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .trust-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .trust-label {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        
-        /* SECTIONS */
-        section {
-            padding: 6rem 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
-        }
-        
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--neutral);
-            line-height: 1.7;
-        }
-        
-        .bg-light {
-            background: var(--light);
-        }
-        
-        /* PROBLEMA */
-        .problema {
-            background: linear-gradient(135deg, #1a2a4e 0%, #2c5aa0 100%);
-            color: var(--white);
-        }
-        
-        .problema h2,
-        .problema p {
-            color: var(--white);
-        }
-        
-        .problema-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-        
-        .problema-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .problema-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .problema-card h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        .problema-card p {
-            opacity: 0.95;
-            line-height: 1.7;
-        }
-        
-        /* SERVICIOS */
-        .servicios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .servicio-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .servicio-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .servicio-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-        
-        .servicio-content {
-            padding: 2rem;
-        }
-        
-        .servicio-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .servicio-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .servicio-precio {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 0.5rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 700;
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        /* POR QUÉ NOSOTROS */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .why-item {
-            text-align: center;
-        }
-        
-        .why-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent) 0%, #ffca3a 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
-        }
-        
-        .why-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .why-item p {
-            line-height: 1.7;
-        }
-        
-        /* PROCESO */
-        .proceso-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            position: relative;
-        }
-        
-        .step {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            position: relative;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--accent);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin: 0 auto 1.5rem;
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .step p {
-            line-height: 1.7;
-        }
-        
-        /* GALERÍA */
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .galeria-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            aspect-ratio: 1;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .galeria-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        .galeria-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* TESTIMONIOS */
-        .testimonios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-        
-        .testimonio {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .testimonio-stars {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .testimonio-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            color: var(--neutral);
-        }
-        
-        .testimonio-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .testimonio-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--primary);
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .testimonio-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .testimonio-info p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-        
-        /* CTA FINAL */
-        .cta-final {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--trust) 100%);
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .cta-final h2 {
-            color: var(--white);
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-        }
-        
-        .cta-final p {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-        }
-        
-        .formulario {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .formulario h3 {
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .btn-submit {
-            width: 100%;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 1.2rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .btn-submit:hover {
-            background: #ffca3a;
-            transform: translateY(-2px);
-        }
-        
-        .urgencia {
-            background: rgba(255, 184, 0, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .urgencia p {
-            color: var(--primary);
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        /* CONTACTO */
-        .contacto-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .info-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .info-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .info-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .info-card a {
-            color: var(--trust);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .info-card a:hover {
-            color: var(--accent);
-        }
-        
-        .mapa {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-        
-        /* FOOTER */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 3rem 20px 2rem;
-            text-align: center;
-        }
-        
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-disclaimer {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            section {
-                padding: 4rem 20px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .formulario {
-                padding: 2rem 1.5rem;
-            }
-        }
-        
-        /* ANIMACIONES */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TALLERES CARRACEDO S.L. | talleres mecanicos en Ponferrada, El Bierzo</title>
+<meta name="description" content="Taller mecánico de confianza en Ponferrada. Diagnóstico transparente, piezas originales y garantía escrita. 32 años cuidando tu coche sin sorpresas en la factura. Llama al 987 42 86 60.">
+<meta property="og:title" content="TALLERES CARRACEDO S.L. | Taller mecánico Ponferrada">
+<meta property="og:description" content="Diagnóstico transparente, piezas originales y garantía escrita. 32 años en Ponferrada.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://picsum.photos/seed/carracedo-taller-exterior/1200/630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "TALLERES CARRACEDO S.L.",
+  "image": "https://picsum.photos/seed/carracedo-taller-exterior/1200/630",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Portugal, 291",
+    "addressLocality": "Ponferrada",
+    "addressRegion": "León",
+    "postalCode": "24403",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34987428660",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "58"
+  },
+  "priceRange": "€€",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:30",
+    "closes": "19:00"
+  }
+}
+</script>
+<style>
+:root {
+--primary: #2d2d2d;
+--accent: #ffd700;
+--bg: #f8f8f8;
+--text: #333;
+--light: #fff;
+--border: #ddd;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font: 400 16px/1.6 'Open Sans', sans-serif;
+color: var(--text);
+background: var(--bg);
+}
+h1, h2, h3, h4 {
+font-family: 'Rubik', sans-serif;
+font-weight: 700;
+line-height: 1.2;
+}
+h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 1rem; }
+h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+header {
+background: var(--primary);
+color: var(--light);
+padding: 1rem 5%;
+position: sticky;
+top: 0;
+z-index: 999;
+box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 1rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+.logo {
+font-size: 1.3rem;
+font-weight: 700;
+}
+.nav-cta {
+display: flex;
+gap: 1rem;
+align-items: center;
+flex-wrap: wrap;
+}
+.tel-link {
+font-weight: 600;
+font-size: 1.1rem;
+white-space: nowrap;
+}
+.btn {
+display: inline-block;
+padding: .75rem 1.5rem;
+border-radius: 4px;
+font-weight: 600;
+transition: all .3s;
+text-align: center;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+}
+.btn-primary {
+background: var(--accent);
+color: var(--primary);
+}
+.btn-primary:hover {
+background: #ffed4e;
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(255,215,0,.4);
+}
+.btn-secondary {
+background: transparent;
+color: var(--light);
+border: 2px solid var(--light);
+}
+.btn-secondary:hover {
+background: var(--light);
+color: var(--primary);
+}
+#hero {
+position: relative;
+min-height: 70vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: var(--light);
+padding: 2rem 5%;
+overflow: hidden;
+}
+#hero img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -2;
+}
+#hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, rgba(45,45,45,.85), rgba(45,45,45,.6));
+z-index: -1;
+}
+.hero-content {
+max-width: 900px;
+}
+.hero-content h1 {
+margin-bottom: 1rem;
+text-shadow: 2px 2px 4px rgba(0,0,0,.3);
+}
+.hero-subtitle {
+font-size: clamp(1rem, 2.5vw, 1.3rem);
+margin-bottom: 2rem;
+opacity: .95;
+}
+.hero-ctas {
+display: flex;
+gap: 1rem;
+justify-content: center;
+flex-wrap: wrap;
+}
+section {
+padding: 4rem 5%;
+max-width: 1200px;
+margin: 0 auto;
+}
+.trust {
+background: var(--light);
+text-align: center;
+padding: 2rem 5%;
+border-bottom: 3px solid var(--accent);
+}
+.trust-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+max-width: 1000px;
+margin: 0 auto;
+}
+.trust-item {
+padding: 1rem;
+}
+.trust-number {
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--accent);
+display: block;
+}
+.trust-label {
+color: var(--text);
+font-weight: 600;
+margin-top: .5rem;
+}
+#problema {
+background: var(--primary);
+color: var(--light);
+text-align: center;
+}
+#problema h2 {
+margin-bottom: 1.5rem;
+}
+#problema p {
+font-size: 1.1rem;
+max-width: 800px;
+margin: 0 auto 1rem;
+line-height: 1.8;
+}
+.servicios-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.servicio-card {
+background: var(--light);
+border-radius: 8px;
+padding: 2rem;
+box-shadow: 0 4px 12px rgba(0,0,0,.08);
+transition: all .3s;
+border-top: 4px solid var(--accent);
+}
+.servicio-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+.servicio-card h3 {
+color: var(--primary);
+margin-bottom: 1rem;
+}
+.servicio-card p {
+margin-bottom: 1rem;
+color: #555;
+}
+.precio {
+font-weight: 700;
+color: var(--accent);
+font-size: 1.3rem;
+display: block;
+margin-top: 1rem;
+}
+.proceso-steps {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.step {
+text-align: center;
+padding: 2rem 1rem;
+background: var(--light);
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.step-number {
+width: 60px;
+height: 60px;
+background: var(--accent);
+color: var(--primary);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.8rem;
+font-weight: 700;
+margin: 0 auto 1rem;
+}
+.step h3 {
+margin-bottom: .75rem;
+color: var(--primary);
+}
+.galeria-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin-top: 3rem;
+}
+.galeria-grid img {
+width: 100%;
+height: 300px;
+object-fit: cover;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0,0,0,.1);
+transition: transform .3s;
+}
+.galeria-grid img:hover {
+transform: scale(1.05);
+}
+#testimonios {
+background: var(--light);
+}
+.testimonios-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.testimonio {
+background: var(--bg);
+padding: 2rem;
+border-radius: 8px;
+border-left: 4px solid var(--accent);
+box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.estrellas {
+color: var(--accent);
+font-size: 1.2rem;
+margin-bottom: .5rem;
+}
+.testimonio-texto {
+font-style: italic;
+margin-bottom: 1rem;
+color: #444;
+line-height: 1.7;
+}
+.testimonio-autor {
+font-weight: 600;
+color: var(--primary);
+}
+.testimonio-barrio {
+font-size: .9rem;
+color: #777;
+}
+.contacto-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 3rem;
+margin-top: 2rem;
+align-items: start;
+}
+.contacto-info {
+text-align: center;
+}
+.contacto-info .tel-link {
+font-size: 2rem;
+color: var(--primary);
+font-weight: 700;
+display: block;
+margin: 1.5rem 0;
+}
+.contacto-info .btn {
+margin-top: 1rem;
+width: 100%;
+max-width: 300px;
+}
+.whatsapp-btn {
+background: #25D366;
+color: var(--light);
+}
+.whatsapp-btn:hover {
+background: #20ba5a;
+}
+#cta-final {
+background: linear-gradient(135deg, var(--primary), #1a1a1a);
+color: var(--light);
+text-align: center;
+}
+#cta-final h2 {
+margin-bottom: 1rem;
+}
+#cta-final p {
+font-size: 1.1rem;
+margin-bottom: 2rem;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+.form-container {
+max-width: 600px;
+margin: 2rem auto 0;
+background: rgba(255,255,255,.1);
+padding: 2rem;
+border-radius: 8px;
+}
+.form-group {
+margin-bottom: 1.5rem;
+text-align: left;
+}
+.form-group label {
+display: block;
+margin-bottom: .5rem;
+font-weight: 600;
+}
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: .75rem;
+border: none;
+border-radius: 4px;
+font-size: 1rem;
+font-family: inherit;
+}
+.form-group textarea {
+resize: vertical;
+min-height: 120px;
+}
+footer {
+background: var(--primary);
+color: var(--light);
+text-align: center;
+padding: 2rem 5%;
+font-size: .9rem;
+line-height: 1.8;
+}
+footer a {
+color: var(--accent);
+}
+@media (min-width: 768px) {
+.hero-content h1 {
+font-size: 3rem;
+}
+section {
+padding: 5rem 5%;
+}
+}
+</style>
 </head>
 <body>
-    
-    <!-- HERO -->
-    <header class="hero">
-        <img src="https://source.unsplash.com/1600x900/?mechanic,garage,professional" alt="Taller Mecánico Ponferrada" class="hero-bg">
-        <div class="hero-content fade-in-up">
-            <h1>Tu coche en manos de especialistas en Ponferrada</h1>
-            <p class="hero-subtitle">Diagnóstico gratuito, presupuestos sin compromiso y transparencia total. Más de 25 años cuidando vehículos en El Bierzo.</p>
-            <div class="cta-buttons">
-                <a href="tel:+34987428660" class="btn btn-primary">
-                    📞 Llamar: 987 42 86 60
-                </a>
-                <a href="https://wa.me/34987428660?text=Hola,%20necesito%20información%20sobre%20vuestros%20servicios" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                    💬 WhatsApp
-                </a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="trust-container">
-            <div class="trust-item">
-                <div class="trust-number">⭐ 4.6/5</div>
-                <div class="trust-label">Valoración en Google</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-number">58</div>
-                <div class="trust-label">Clientes satisfechos</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-number">+25 años</div>
-                <div class="trust-label">De experiencia</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-number">100%</div>
-                <div class="trust-label">Garantía en reparaciones</div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- PROBLEMA -->
-    <section class="problema">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Cansado de talleres que no cumplen lo prometido?</h2>
-                <p>Sabemos lo que piensas cuando tu coche tiene un problema</p>
-            </div>
-            <div class="problema-grid">
-                <div class="problema-card">
-                    <div class="problema-icon">😰</div>
-                    <h3>¿Me cobrarán de más?</h3>
-                    <p>Presupuestos inflados, averías inventadas y precios que cambian cuando vienes a recoger el coche.</p>
-                </div>
-                <div class="problema-card">
-                    <div class="problema-icon">⏰</div>
-                    <h3>¿Cuándo estará listo?</h3>
-                    <p>Plazos que nunca se cumplen y llamadas sin respuesta cuando intentas saber el estado de tu vehículo.</p>
-                </div>
-                <div class="problema-card">
-                    <div class="problema-icon">🔧</div>
-                    <h3>¿Lo arreglarán bien?</h3>
-                    <p>Reparaciones mal hechas que solo duran unas semanas y te obligan a volver con el mismo problema.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SOLUCIÓN -->
-    <section class="bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Por eso en Talleres Carracedo trabajamos diferente</h2>
-                <p>Presupuesto fijo antes de tocar tu coche. Diagnóstico gratuito con tecnología de última generación. Y si el precio cambia, tú decides si seguimos o no.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="why-icon">✓</div>
-                    <h3>Precio cerrado por escrito</h3>
-                    <p>Te damos un presupuesto detallado antes de empezar. Sin sorpresas, sin letra pequeña.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">📋</div>
-                    <h3>Diagnóstico gratuito</h3>
-                    <p>Análisis completo sin coste. Sabrás exactamente qué tiene tu coche antes de decidir.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">⚙️</div>
-                    <h3>Equipamiento profesional</h3>
-                    <p>Maquinaria de diagnosis oficial y herramientas especializadas para todas las marcas.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">🛡️</div>
-                    <h3>Garantía en todas las reparaciones</h3>
-                    <p>Si falla algo que hemos reparado, lo solucionamos sin coste adicional. Así de simple.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SERVICIOS -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2>Servicios completos para tu vehículo</h2>
-                <p>Desde el mantenimiento básico hasta las reparaciones más complejas</p>
-            </div>
-            <div class="servicios-grid">
-                <div class="servicio-card">
-                    <img src="https://source.unsplash.com/800x600/?car,engine,repair" alt="Mecánica general" class="servicio-img">
-                    <div class="servicio-content">
-                        <h3>Mecánica General</h3>
-                        <p>Motor, transmisión, embrague, frenos y suspensión. Reparamos cualquier avería con piezas de calidad y garantía.</p>
-                        <span class="servicio-precio">Desde 45€</span>
-                    </div>
-                </div>
-                <div class="servicio-card">
-                    <img src="https://source.unsplash.com/800x600/?car,diagnostic,technology" alt="Diagnosis electrónica" class="servicio-img">
-                    <div class="servicio-content">
-                        <h3>Diagnosis Electrónica</h3>
-                        <p>Escáner multimarca, borrado de códigos de error y programación de centralitas. Tecnología oficial.</p>
-                        <span class="servicio-precio">Diagnóstico gratuito</span>
-                    </div>
-                </div>
-                <div class="servicio-card">
-                    <img src="https://source.unsplash.com/800x600/?car,maintenance,oil" alt="Mantenimiento ITV" class="servicio-img">
-                    <div class="servicio-content">
-                        <h3>Pre-ITV y Mantenimiento</h3>
-                        <p>Revisión completa antes de pasar la ITV. Cambio de aceite, filtros, frenos y todo lo necesario para que pase a la primera.</p>
-                        <span class="servicio-precio">Desde 89€</span>
-                    </div>
-                </div>
-                <div class="servicio-card">
-                
+<header>
+<nav>
+<div class="logo">TALLERES CARRACEDO</div>
+<div class="nav-cta">
+<a href="tel:987428660" class="tel-link">987 42 86 60</a>
+<a href="#cta-final" class="btn btn-primary">Presupuesto gratis</a>
+</div>
+</nav>
+</header>
+
+<section id="hero">
+<img src="https://picsum.photos/seed/carracedo-taller-exterior/1600/900" alt="Taller mecánico Carracedo en Ponferrada">
+<div class="hero-content">
+<h1>Tu coche en manos expertas sin sorpresas en la factura</h1>
+<p class="hero-subtitle">Taller mecánico familiar en Ponferrada desde 1992. Diagnóstico transparente, piezas originales y garantía por escrito en cada reparación.</p>
+<div class="hero-ctas">
+<a href="tel:987428660" class="btn btn-primary">Llamar ahora</a>
+<a href="https://wa.me/34987428660" class="btn btn-secondary">WhatsApp</a>
+</div>
+</div>
+</section>
+
+<div class="trust">
+<div class="trust-grid">
+<div class="trust-item">
+<span class="trust-number">4.6★</span>
+<span class="trust-label">Valoración Google</span>
+</div>
+<div class="trust-item">
+<span class="trust-number">58</span>
+<span class="trust-label">Clientes satisfechos</span>
+</div>
+<div class="trust-item">
+<span class="trust-number">32</span>
+<span class="trust-label">Años en activo</span>
+</div>
+<div class="trust-item">
+<span class="trust-number">12</span>
+<span class="trust-label">Meses de garantía</span>
+</div>
+</div>
+</div>
+
+<section id="problema">
+<h2>Sabes que algo va mal, pero temes la factura</h2>
+<p>Ese ruido extraño al frenar. La luz del motor que no se apaga. El miedo a que te digan que hay que cambiar media mecánica cuando igual es una tontería.</p>
+<p>Llevas semanas posponiendo la visita al taller porque la última vez te sentiste engañado. Presupuestos que se disparan sin explicación. Averías que "aparecen" cuando el coche ya está desmontado.</p>
+<p>En Talleres Carracedo trabajamos distinto: te enseñamos la pieza rota, te explicamos qué pasa con palabras normales y te damos presupuesto cerrado antes de tocar nada. Sin letra pequeña.</p>
+</section>
+
+<section id="servicios">
+<h2>Servicios mecánicos con garantía real</h2>
+<div class="servicios-grid">
+<div class="servicio-card">
+<h3>Revisión completa pre-ITV</h3>
+<p>Evita sorpresas el día del examen. Revisamos frenos, luces, neumáticos, emisiones y todo lo que miran en la ITV. Si hay que cambiar algo, te lo decimos antes.</p>
+<span class="precio">Desde 45€</span>
+</div>
+<div class="servicio-card">
+<h3>Cambio de aceite y filtros</h3>
+<p>Aceites homologados para tu motor. Filtro de aceite, aire y habitáculo incluidos. Te recordamos cuándo toca el próximo.</p>
+<span class="precio">Desde 65€</span>
+</div>
+<div class="servicio-card">
+<h3>Frenos y pastillas</h3>
+<p>Cambio de pastillas, discos y líquido de frenos. Probamos en carretera después para que salgas tranquilo. Piezas con certificado de calidad.</p>
+<span class="precio">Desde 120€</span>
+</div>
+<div class="servicio-card">
+<h3>Mecánica general y averías</h3>
+<p>Diagnóstico con máquina profesional. Te explicamos qué falla y por qué. Presupuesto cerrado antes de empezar. Garantía de 12 meses en la reparación.</p>
+<span class="precio">Consultar</span>
+</div>
+<div class="servicio-card">
+<h3>Neumáticos y alineación</h3>
+<p>Neumáticos de primeras marcas al mejor precio. Equilibrado y alineación computerizada incluidos. Montaje y válvula nueva sin coste.</p>
+<span class="precio">Desde 50€/unidad</span>
+</div>
+</div>
+</section>
+
+<section id="proceso">
+<h2>Cómo trabajamos: sin letra pequeña</h2>
+<div class="proceso-steps">
+<div class="step">
+<div class="step-number">1</div>
+<h3>Diagnóstico transparente</h3>
+<p>Conectamos el ordenador, revisamos lo que nos cuentas y te explicamos qué pasa de verdad. Si es una tontería, te lo decimos.</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h3>Presupuesto cerrado</h3>
+<p>Te enviamos presupuesto detallado por WhatsApp o email. Precio final, sin sorpresas. Si al desmontar aparece algo más, te llamamos antes de tocarlo.</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h3>Reparación y prueba</h3>
+<p>Reparamos con piezas de calidad. Probamos el coche en carretera. Te entregamos factura con garantía de 12 meses por escrito.</p>
+</div>
+</div>
+</section>
+
+<section id="galeria">
+<h2>Nuestras instalaciones en Ponferrada</h2>
+<div class="galeria-grid">
+<img src="https://picsum.photos/seed/carracedo-elevador-taller/600/600" alt="Elevador de vehículos en Talleres Carracedo">
+<img src="https://picsum.photos/seed/carracedo-herramientas-profesionales/600/600" alt="Herramientas profesionales taller mecánico">
+<img src="https://picsum.photos/seed/carracedo-diagnostico-ordenador/600/600" alt="Diagnóstico computerizado de vehículos">
+<img src="https://picsum.photos/seed/carracedo-mecanico-trabajando/600/600" alt="Mecánico profesional trabajando en motor">
+<img src="https://picsum.photos/seed/carracedo-zona-espera-clientes/600/600" alt="Zona de espera para clientes">
+<img src="https://picsum.photos/seed/carracedo-exterior-nave/600/600" alt="Exterior del taller en Avenida Portugal">
+</div>
+</section>
+
+<section id="testimonios">
+<h2>Lo que dicen nuestros clientes</h2>
+<div class="testimonios-grid">
+<div class="testimonio">
+<div class="estrellas">★★★★★</div>
+<p class="testimonio-texto">Llevaba meses con un ruido en la suspensión que en otro taller me decían que eran los amortiguadores. Aquí lo miraron bien y era una simple goma. Me cobraron 25€ cuando podía haberme clavado 400. Honradez de la de verdad.</p>
+<p class="testimonio-autor">Miguel Ángel R.</p>
+<p class="testimonio-barrio">Flores del Sil</p>
+</div>
+<div class="testimonio">
+<div class="estrellas">★★★★★</div>
+<p class="testimonio-texto">Me llamaron a media mañana porque al revisar los frenos vieron que el disco también estaba mal. Me explicaron por qué y me dieron opciones de precios. No empezaron sin mi OK. Ese detalle se valora muchísimo.</p>
+<p class="testimonio-autor">Carmen F.</p>
+<p class="testimonio-barrio">Centro Ponferrada</p>
+</div>
+<div class="testimonio">
+<div class="estrellas">★★★★★</div>
+<p class="testimonio-texto">Revisión pre-ITV perfecta. Me señalaron todo lo que podía dar problemas, lo arreglaron en el día y pasé a la primera. Trato familiar, te explican todo con paciencia. Ya tengo taller para años.</p>
+<p class="testimonio-autor">Javier L.</p>
+<p class="testimonio-barrio">Compostilla</p>
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<h2>Ven a vernos sin compromiso</h2>
+<div class="contacto-grid">
+<div class="contacto-info">
+<h3>Llámanos ahora</h3>
+<a href="tel:987428660" class="tel-link">987 42 86 60</a>
+<a href="https://wa.me/34987428660" class="btn whatsapp-btn">Escribir por WhatsApp</a>
+<p style="margin-top:2rem"><strong>Av. de Portugal, 291<br>24403 Ponferrada, León</strong></p>
+<p>Lunes a Viernes: 08:30 - 19:00h</p>
+</div>
+<div>
+<iframe src="https://www.google.com/maps?q=Av.+de+Portugal%2C+291%2C+24403+Ponferrada%2C+León%2C+España&output=embed" width="100%" height="300" style="border:0;border-radius:8px" allowfullscreen loading="lazy"></iframe>
+</div>
+</div>
+</section>
+
+<section id="cta-final">
+<h2>Presupuesto gratis en 24 horas</h2>
+<p>Cuéntanos qué le pasa a tu coche y te llamamos para darte un presupuesto orientativo sin compromiso. O pasa directamente por el taller, siempre hay sitio para una revisión rápida.</p>
+<div class="form-container">
+<form action="#" method="post">
+<div class="form-group">
+<label for="nombre">Tu nombre</label>
+<input type="text" id="nombre" name="nombre" required>
+</div>
+<div class="form-group">
+<label for="telefono">Tu teléfono</label>
+<input type="tel" id="telefono" name="telefono" required>
+</div>
+<div class="form-group">
+<label for="mensaje">¿Qué le pasa a tu coche?</label>
+<textarea id="mensaje" name="mensaje" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary" style="width:100%">Solicitar presupuesto gratis</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>Web diseñada por Kaiteck · kaiteck.com</p>
+<p>⚠️ Demo ilustrativa generada con IA — el contenido no representa al negocio real</p>
+</footer>
+</body>
+</html>
+```
