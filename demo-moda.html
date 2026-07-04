@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAIRO STORE — Streetwear & Urban Fashion | Ponferrada</title>
+  <meta name="description" content="Tienda de moda urbana en Ponferrada. Nueva colección disponible. Envío gratis en pedidos +50€. Devolución 30 días sin preguntas." />
+  <meta property="og:title" content="KAIRO STORE — La moda urbana de Ponferrada" />
+  <meta property="og:description" content="Drops semanales. Piezas limitadas. Envío 24–48 h." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#e11d48" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "KAIRO STORE",
+    "telephone": "+34987654321",
+    "url": "https://kairostore.es",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Gil y Carrasco, 8",
+      "addressLocality": "Ponferrada",
+      "postalCode": "24400",
+      "addressCountry": "ES"
+    },
+    "openingHours": ["Mo-Sa 10:30-14:00", "Mo-Sa 17:00-20:30"],
+    "priceRange": "€€"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    :root {
+      --black:    #080808;
+      --dark:     #111111;
+      --dark-2:   #181818;
+      --dark-3:   #222222;
+      --red:      #e11d48;
+      --red-lt:   #f43f5e;
+      --red-dk:   #be123c;
+      --white:    #f8f8f8;
+      --ink:      #d4d4d4;
+      --muted:    #737373;
+      --muted-2:  #404040;
+      --yellow:   #eab308;
+      --maxw:     1200px;
+      --pad:      clamp(1.2rem, 5vw, 2.4rem);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: rgba(225,29,72,.35); color: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 3px; }
+
+    .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
+    .section { padding-block: clamp(4rem, 8vw, 7rem); }
+
+    /* TYPO */
+    h1, h2, h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; line-height: .94; letter-spacing: -.01em; color: var(--white);
+      text-transform: uppercase;
+    }
+    h2 { font-size: clamp(2.4rem, 5vw, 4rem); }
+    h3 { font-size: clamp(1.2rem, 2.2vw, 1.7rem); }
+    .lead { font-size: clamp(.95rem, 1.6vw, 1.12rem); color: var(--muted); line-height: 1.7; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .7rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 1rem;
+    }
+    .eyebrow::before { content: ""; width: 18px; height: 1.5px; background: var(--red); }
+
+    /* BADGE */
+    .badge {
+      display: inline-block; font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      padding: .28rem .7rem; border-radius: 3px;
+    }
+    .badge-red { background: var(--red); color: #fff; }
+    .badge-yellow { background: var(--yellow); color: var(--black); }
+    .badge-outline { border: 1px solid var(--muted-2); color: var(--muted); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 1rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: .85rem 2rem; border-radius: 3px; cursor: pointer; border: none;
+      transition: transform .18s, background .18s, box-shadow .22s;
+      white-space: nowrap;
+    }
+    .btn-red { background: var(--red); color: #fff; box-shadow: 0 6px 24px -6px rgba(225,29,72,.5); }
+    .btn-red:hover { background: var(--red-lt); transform: translateY(-2px); box-shadow: 0 12px 32px -8px rgba(225,29,72,.6); }
+    .btn-white { background: var(--white); color: var(--black); }
+    .btn-white:hover { background: #e5e5e5; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.2); }
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+    .btn-wa { background: #1faf54; color: #fff; }
+    .btn-wa:hover { background: #17973f; transform: translateY(-2px); }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background .3s, border-color .3s;
+      border-bottom: 1px solid transparent;
+    }
+    header.scrolled {
+      background: rgba(8,8,8,.92);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 1.5rem; }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 1.55rem; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links a { font-size: .85rem; font-weight: 500; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-right { display: flex; align-items: center; gap: .8rem; }
+    .nav-icon { background: none; border: none; cursor: pointer; color: var(--ink); padding: 6px; line-height: 0; transition: color .2s; }
+    .nav-icon:hover { color: var(--red); }
+    .nav-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; }
+    .nav-bag-count {
+      position: relative; display: inline-flex;
+    }
+    .nav-bag-count::after {
+      content: "3"; position: absolute; top: 0; right: 0;
+      width: 14px; height: 14px; border-radius: 50%; background: var(--red);
+      font-size: .58rem; font-weight: 700; color: #fff;
+      display: grid; place-items: center; transform: translate(30%,-30%);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh; display: grid; place-items: center;
+      padding-top: 64px; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?w=1600&q=75') center 30%/cover;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, rgba(8,8,8,.88) 45%, rgba(8,8,8,.4) 100%);
+    }
+    .hero-inner { position: relative; z-index: 2; width: 100%; padding-block: clamp(3rem, 8vh, 6rem); }
+
+    .hero-drop {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--red); color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+      padding: .45rem 1rem; border-radius: 2px; margin-bottom: 1.6rem;
+    }
+    .drop-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; flex-shrink: 0; animation: blink 1.4s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+    #hero h1 { font-size: clamp(3.5rem, 10vw, 8.5rem); line-height: .9; margin-bottom: 1.2rem; max-width: 12ch; }
+    #hero h1 em { font-style: italic; color: var(--red); }
+    #hero .lead { max-width: 40ch; margin-bottom: 2.4rem; }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .h-stat strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--white); line-height: 1; }
+    .h-stat span { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--red); overflow: hidden; padding-block: .7rem;
+      border-block: 1px solid rgba(255,255,255,.08);
+    }
+    .marquee-track {
+      display: flex; gap: 3rem; white-space: nowrap;
+      animation: marquee 22s linear infinite;
+    }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: .6rem; flex-shrink: 0;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: .85rem; letter-spacing: .15em; text-transform: uppercase; color: #fff;
+    }
+    .marquee-item svg { width: 12px; height: 12px; fill: rgba(255,255,255,.7); }
+
+    /* ── CATEGORIES ── */
+    #categorias { background: var(--black); }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 2.4rem; }
+    .cat-card {
+      position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: pointer;
+      display: block;
+    }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .cat-card:hover img { transform: scale(1.05); }
+    .cat-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.1) 50%, transparent 100%);
+      transition: background .3s;
+    }
+    .cat-card:hover .cat-overlay { background: linear-gradient(to top, rgba(225,29,72,.7) 0%, rgba(0,0,0,.1) 60%, transparent 100%); }
+    .cat-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; }
+    .cat-badge { margin-bottom: .5rem; }
+    .cat-info h3 { font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--white); }
+    .cat-info p { font-size: .82rem; color: rgba(255,255,255,.7); margin-top: .3rem; }
+    .cat-arrow { margin-top: .8rem; color: rgba(255,255,255,.0); font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; transition: color .3s; display: inline-flex; align-items: center; gap: .4rem; }
+    .cat-card:hover .cat-arrow { color: #fff; }
+
+    /* ── NEW IN ── */
+    #new-in { background: var(--dark); }
+    .section-hd { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.4rem; flex-wrap: wrap; gap: 1rem; }
+    .ver-todo { font-size: .82rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--muted-2); padding-bottom: 1px; transition: color .2s, border-color .2s; }
+    .ver-todo:hover { color: var(--red); border-color: var(--red); }
+    .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .prod-card { cursor: pointer; }
+    .prod-img { position: relative; aspect-ratio: 3/4; overflow: hidden; background: var(--dark-2); border-radius: 4px; margin-bottom: .9rem; }
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+    .prod-card:hover .prod-img img { transform: scale(1.04); }
+    .prod-badges { position: absolute; top: .7rem; left: .7rem; display: flex; flex-direction: column; gap: .35rem; z-index: 1; }
+    .prod-action {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: .8rem;
+      background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .prod-card:hover .prod-action { opacity: 1; }
+    .prod-btn { background: var(--red); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; padding: .6rem 1rem; border-radius: 3px; border: none; cursor: pointer; width: 100%; }
+    .prod-brand { font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .2rem; }
+    .prod-name { font-size: .93rem; font-weight: 500; color: var(--ink); margin-bottom: .4rem; }
+    .prod-price { display: flex; align-items: center; gap: .5rem; }
+    .prod-price .price { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--white); }
+    .prod-price .price-old { font-size: .82rem; color: var(--muted); text-decoration: line-through; }
+    .prod-price .price-off { font-size: .72rem; font-weight: 700; color: var(--yellow); }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip { background: var(--dark-2); border-block: 1px solid rgba(255,255,255,.06); padding-block: 2rem; }
+    .trust-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .trust-item { display: flex; align-items: flex-start; gap: .9rem; }
+    .trust-icon { flex-shrink: 0; width: 38px; height: 38px; border-radius: 8px; background: rgba(225,29,72,.1); border: 1px solid rgba(225,29,72,.2); display: grid; place-items: center; margin-top: 2px; }
+    .trust-icon svg { width: 18px; height: 18px; stroke: var(--red); fill: none; stroke-width: 1.8; }
+    .trust-item h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; color: var(--white); margin-bottom: .15rem; }
+    .trust-item p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── LOOKBOOK ── */
+    #lookbook { background: var(--black); }
+    .look-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 3px;
+      margin-top: 2.4rem;
+    }
+    .look-card { position: relative; overflow: hidden; cursor: pointer; display: block; }
+    .look-card:first-child { grid-row: 1 / 3; aspect-ratio: 4/5; }
+    .look-card:not(:first-child) { aspect-ratio: 16/9; }
+    .look-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .look-card:hover img { transform: scale(1.04); }
+    .look-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,.3);
+      display: flex; align-items: flex-end; padding: 1.4rem;
+      transition: background .3s;
+    }
+    .look-card:hover .look-overlay { background: rgba(225,29,72,.35); }
+    .look-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.1rem; color: #fff; text-transform: uppercase; letter-spacing: .06em; }
+
+    /* ── SOBRE NOSOTROS ── */
+    #nosotros { background: var(--dark-2); }
+    .nos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+    .nos-img { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 4/5; }
+    .nos-img img { width: 100%; height: 100%; object-fit: cover; }
+    .nos-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(225,29,72,.15), transparent); }
+    .nos-text h2 { margin-bottom: 1rem; }
+    .nos-text .lead { margin-bottom: 1.6rem; }
+    .nos-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+    .nos-chip { border: 1px solid var(--muted-2); color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .4rem .85rem; border-radius: 999px; }
+
+    /* ── INSTAGRAM ── */
+    #instagram { background: var(--dark); }
+    .insta-header { text-align: center; margin-bottom: 2.4rem; }
+    .insta-handle { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--red); letter-spacing: .04em; margin-bottom: .4rem; }
+    .insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px; }
+    .insta-post { aspect-ratio: 1; overflow: hidden; background: var(--dark-2); cursor: pointer; position: relative; }
+    .insta-post img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease, filter .4s ease; }
+    .insta-post:hover img { transform: scale(1.06); filter: brightness(.7); }
+    .insta-post .insta-hover {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      opacity: 0; transition: opacity .3s;
+    }
+    .insta-post:hover .insta-hover { opacity: 1; }
+    .insta-hover svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── CTA FINAL ── */
+    #cta-final {
+      background: var(--red); text-align: center;
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+    #cta-final h2 { color: #fff; font-size: clamp(2.4rem, 6vw, 5rem); margin-bottom: .8rem; }
+    #cta-final p { color: rgba(255,255,255,.8); font-size: 1.05rem; margin-bottom: 2.4rem; }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,.06); padding-block: 3rem; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.4rem; }
+    .foot-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.4rem; letter-spacing: .08em; text-transform: uppercase; color: var(--white); margin-bottom: .6rem; }
+    .foot-logo span { color: var(--red); }
+    .foot-desc { font-size: .85rem; color: var(--muted); line-height: 1.65; max-width: 28ch; }
+    .foot-social { display: flex; gap: .6rem; margin-top: 1.2rem; }
+    .social-btn { width: 34px; height: 34px; border-radius: 6px; background: var(--dark-2); border: 1px solid var(--muted-2); display: grid; place-items: center; transition: background .2s, border-color .2s; }
+    .social-btn:hover { background: var(--red); border-color: var(--red); }
+    .social-btn svg { width: 15px; height: 15px; fill: var(--ink); }
+    .foot-col h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .85rem; letter-spacing: .15em; text-transform: uppercase; color: var(--white); margin-bottom: .9rem; }
+    .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .foot-col li a { font-size: .85rem; color: var(--muted); transition: color .2s; }
+    .foot-col li a:hover { color: var(--red); }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,.05); padding-top: 1.4rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .8rem; }
+    .foot-legal { font-size: .78rem; color: var(--muted); }
+
+    /* ── FLOATING WA ── */
+    .float-wa {
+      position: fixed; right: 22px; bottom: 22px; z-index: 90;
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #1faf54; color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .95rem; letter-spacing: .05em; text-transform: uppercase;
+      padding: .85rem 1.2rem; border-radius: 999px;
+      box-shadow: 0 10px 30px -8px rgba(31,175,84,.5);
+      transition: transform .2s, box-shadow .25s;
+    }
+    .float-wa:hover { transform: translateY(-3px); box-shadow: 0 16px 36px -10px rgba(31,175,84,.6); }
+    .float-wa svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+      .cat-grid :nth-child(3) { display: none; }
+      .prod-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-inner { grid-template-columns: repeat(2, 1fr); }
+      .look-grid { grid-template-columns: 1fr; }
+      .look-card:first-child { grid-row: auto; }
+      .nos-grid { grid-template-columns: 1fr; }
+      .nos-img { max-height: 380px; }
+      .insta-grid { grid-template-columns: repeat(3, 1fr); }
+      .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .cat-grid { grid-template-columns: 1fr; }
+      .cat-grid :nth-child(2), .cat-grid :nth-child(3) { display: none; }
+      .prod-grid { grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .insta-grid { grid-template-columns: repeat(3, 1fr); }
+      .foot-grid { grid-template-columns: 1fr; }
+      .float-wa span { display: none; }
+      .float-wa { padding: .85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/34987654321?text=Hola%2C%20quiero%20info%20sobre%20vuestras%20colecciones" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="wrap nav">
+    <a href="#hero" class="nav-logo" aria-label="KAIRO STORE inicio">KAI<span>RO</span></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#categorias">Colecciones</a>
+      <a href="#new-in">New In</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-icon" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="nav-icon nav-bag-count" aria-label="Cesta (3 productos)">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" role="presentation" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+
+    <div class="hero-drop reveal">
+      <span class="drop-dot" aria-hidden="true"></span>
+      Drop Verano 2025 — Disponible ahora
+    </div>
+
+    <h1 class="reveal">
+      Viste<br>
+      diferente.<br>
+      <em>Sé tú.</em>
+    </h1>
+
+    <p class="lead reveal">
+      Piezas urbanas de edición limitada. Diseño europeo, calidad que dura.
+      Nueva colección cada semana. Ponferrada tiene su tienda streetwear.
+    </p>
+
+    <div class="hero-ctas reveal">
+      <a href="#new-in" class="btn btn-red">Ver nueva colección</a>
+      <a href="#lookbook" class="btn btn-outline">Lookbook →</a>
+    </div>
+
+    <div class="hero-stats reveal">
+      <div class="h-stat">
+        <strong>+3.200</strong>
+        <span>clientes activos</span>
+      </div>
+      <div class="h-stat">
+        <strong>4.8 ★</strong>
+        <span>en Google</span>
+      </div>
+      <div class="h-stat">
+        <strong>24–48h</strong>
+        <span>envío garantizado</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" role="complementary" aria-label="Ventajas">
+  <div class="marquee-track" aria-hidden="true">
+    <!-- First half -->
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Envío gratis +50€</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Devolución 30 días</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Drop semanal</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Stock limitado</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Pago seguro</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Talla única garantizada</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Recogida en tienda gratis</span>
+    <!-- Second half (duplicate for seamless loop) -->
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Envío gratis +50€</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Devolución 30 días</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Drop semanal</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Stock limitado</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Pago seguro</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Talla única garantizada</span>
+    <span class="marquee-item"><svg viewBox="0 0 12 12"><path d="M10 2L5 8 2 5"/></svg>Recogida en tienda gratis</span>
+  </div>
+</div>
+
+<!-- CATEGORÍAS -->
+<section id="categorias" class="section">
+  <div class="wrap">
+    <p class="eyebrow reveal">Colecciones</p>
+    <h2 class="reveal">Tu estilo, tu regla.</h2>
+    <div class="cat-grid reveal">
+
+      <a href="#new-in" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=75" alt="Colección Hombre" loading="lazy" />
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <span class="badge badge-red cat-badge">New Drop</span>
+          <h3>Hombre</h3>
+          <p>Chaquetas, hoodies, pantalones</p>
+          <span class="cat-arrow">Ver todo →</span>
+        </div>
+      </a>
+
+      <a href="#new-in" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=75" alt="Colección Mujer" loading="lazy" />
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <span class="badge badge-yellow cat-badge">Más vendido</span>
+          <h3>Mujer</h3>
+          <p>Sets, crop tops, abrigos</p>
+          <span class="cat-arrow">Ver todo →</span>
+        </div>
+      </a>
+
+      <a href="#new-in" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=75" alt="Accesorios" loading="lazy" />
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <span class="badge badge-outline cat-badge">Accesorios</span>
+          <h3>Extras</h3>
+          <p>Gorras, bolsas, calcetines</p>
+          <span class="cat-arrow">Ver todo →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEW IN -->
+<section id="new-in" class="section">
+  <div class="wrap">
+    <div class="section-hd reveal">
+      <div>
+        <p class="eyebrow">Esta semana</p>
+        <h2>New In</h2>
+      </div>
+      <a href="#categorias" class="ver-todo">Ver todo</a>
+    </div>
+
+    <div class="prod-grid">
+
+      <article class="prod-card reveal">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=75" alt="Cargo Techwear" loading="lazy" />
+          <div class="prod-badges">
+            <span class="badge badge-red">New</span>
+          </div>
+          <div class="prod-action"><button class="prod-btn">Añadir a cesta</button></div>
+        </div>
+        <div class="prod-brand">Kairo Originals</div>
+        <div class="prod-name">Cargo Techwear Doble Bolsillo</div>
+        <div class="prod-price"><span class="price">59,95 €</span></div>
+      </article>
+
+      <article class="prod-card reveal">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=400&q=75" alt="Hoodie Oversize" loading="lazy" />
+          <div class="prod-badges">
+            <span class="badge badge-yellow">–30%</span>
+          </div>
+          <div class="prod-action"><button class="prod-btn">Añadir a cesta</button></div>
+        </div>
+        <div class="prod-brand">Kairo Originals</div>
+        <div class="prod-name">Hoodie Oversize Básico</div>
+        <div class="prod-price"><span class="price">41,95 €</span><span class="price-old">59,95 €</span><span class="price-off">–30%</span></div>
+      </article>
+
+      <article class="prod-card reveal">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=75" alt="Zapatillas Urban" loading="lazy" />
+          <div class="prod-badges">
+            <span class="badge badge-red">3 quedan</span>
+          </div>
+          <div class="prod-action"><button class="prod-btn">Añadir a cesta</button></div>
+        </div>
+        <div class="prod-brand">Collab Drop</div>
+        <div class="prod-name">Urban Runner Negro/Rojo</div>
+        <div class="prod-price"><span class="price">89,95 €</span></div>
+      </article>
+
+      <article class="prod-card reveal">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=75" alt="Bomber Varsity" loading="lazy" />
+          <div class="prod-badges">
+            <span class="badge badge-red">New</span>
+          </div>
+          <div class="prod-action"><button class="prod-btn">Añadir a cesta</button></div>
+        </div>
+        <div class="prod-brand">Kairo Originals</div>
+        <div class="prod-name">Bomber Varsity College</div>
+        <div class="prod-price"><span class="price">79,95 €</span></div>
+      </article>
+
+      <article class="prod-card reveal">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1588099768523-f4e6a5679d88?w=400&q=75" alt="Crop Ribbed Set" loading="lazy" />
+          <div class="prod-badges">
+            <span class="badge badge-yellow">–20%</span>
+          </div>
+          <div class="prod-action"><button class="prod-btn">Añadir a cesta</button></div>
+        </div>
+        <div class="prod-brand">Kairo Women</div>
+        <div class="prod-name">Crop Ribbed Set Chocolate</div>
+        <div class="prod-price"><span class="price">47,95 €</span><span class="price-old">59,95 €</span><span class="price-off">–20%</span></div>
+      </article>
+
+      <article class="prod-card reveal">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=75" alt="Gorra Panel Six" loading="lazy" />
+          <div class="prod-badges">
+            <span class="badge badge-outline">Accesorios</span>
+          </div>
+          <div class="prod-action"><button class="prod-btn">Añadir a cesta</button></div>
+        </div>
+        <div class="prod-brand">Kairo Caps</div>
+        <div class="prod-name">Gorra Panel Six Logo Frontal</div>
+        <div class="prod-price"><span class="price">24,95 €</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-inner">
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div>
+          <h4>Envío gratis</h4>
+          <p>En pedidos superiores a 50 €. Entrega en 24–48 h laborables.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <div>
+          <h4>Devolución fácil</h4>
+          <p>30 días sin preguntas. En tienda o con recogida gratuita.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div>
+          <h4>Pago seguro</h4>
+          <p>Visa, Mastercard, PayPal y Bizum. Sin cargos extra.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <h4>Atención real</h4>
+          <p>WhatsApp y teléfono. Personas reales, respuesta en minutos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOOKBOOK -->
+<section id="lookbook" class="section">
+  <div class="wrap">
+    <p class="eyebrow reveal">Lookbook</p>
+    <h2 class="reveal">Drop Verano 2025</h2>
+    <div class="look-grid reveal">
+      <a href="#new-in" class="look-card">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=75" alt="Lookbook principal" loading="lazy" />
+        <div class="look-overlay"><span class="look-label">Ver colección completa →</span></div>
+      </a>
+      <a href="#new-in" class="look-card">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=75" alt="Look urbano mujer" loading="lazy" />
+        <div class="look-overlay"><span class="look-label">Mujer / Urban</span></div>
+      </a>
+      <a href="#new-in" class="look-card">
+        <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=75" alt="Look cargo hombre" loading="lazy" />
+        <div class="look-overlay"><span class="look-label">Hombre / Cargo</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section id="nosotros" class="section">
+  <div class="wrap nos-grid">
+    <div class="nos-img reveal">
+      <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=700&q=75" alt="Interior tienda KAIRO STORE" loading="lazy" />
+    </div>
+    <div class="nos-text">
+      <p class="eyebrow reveal">Nuestra historia</p>
+      <h2 class="reveal">Ponferrada tiene<br>su tienda.</h2>
+      <p class="lead reveal" style="margin-top:1rem;margin-bottom:1.2rem">
+        Abrimos en 2019 con una idea simple: que no tuvieras que ir a Madrid o pedir
+        online para vestir bien. Trajimos las marcas y los estilos que veíamos en
+        las capitales y los pusimos a tu puerta.
+      </p>
+      <p class="lead reveal" style="margin-bottom:1.8rem">
+        Hoy tenemos más de 3.200 clientes activos, enviamos a toda España y seguimos
+        abriendo la tienda cada mañana con las mismas ganas del primer día.
+      </p>
+      <div class="nos-chips reveal">
+        <span class="nos-chip">Desde 2019</span>
+        <span class="nos-chip">+80 marcas</span>
+        <span class="nos-chip">Envío a toda España</span>
+        <span class="nos-chip">Tienda física en Ponferrada</span>
+      </div>
+      <a href="https://wa.me/34987654321?text=Hola%2C%20quiero%20saber%20más%20sobre%20KAIRO" class="btn btn-red reveal" target="_blank" rel="noopener">
+        Hablar con nosotros
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram" class="section">
+  <div class="wrap">
+    <div class="insta-header reveal">
+      <div class="insta-handle">@kairostore</div>
+      <p class="lead">Síguenos para ver los drops antes que nadie</p>
+    </div>
+    <div class="insta-grid reveal">
+      <div class="insta-post">
+        <img src="https://images.unsplash.com/photo-1536766768598-e09213fdcf22?w=300&q=70" alt="" loading="lazy" aria-hidden="true" />
+        <div class="insta-hover"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      </div>
+      <div class="insta-post">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=70" alt="" loading="lazy" aria-hidden="true" />
+        <div class="insta-hover"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      </div>
+      <div class="insta-post">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&q=70" alt="" loading="lazy" aria-hidden="true" />
+        <div class="insta-hover"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      </div>
+      <div class="insta-post">
+        <img src="https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?w=300&q=70" alt="" loading="lazy" aria-hidden="true" />
+        <div class="insta-hover"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      </div>
+      <div class="insta-post">
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&q=70" alt="" loading="lazy" aria-hidden="true" />
+        <div class="insta-hover"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      </div>
+      <div class="insta-post">
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&q=70" alt="" loading="lazy" aria-hidden="true" />
+        <div class="insta-hover"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="wrap">
+    <h2>¿Listo para<br><em style="font-style:italic">destacar?</em></h2>
+    <p>Nueva colección disponible. Stock limitado. No esperes.</p>
+    <div class="cta-btns">
+      <a href="#new-in" class="btn btn-white">Ver colección</a>
+      <a href="https://wa.me/34987654321?text=Hola%2C%20quiero%20ver%20las%20novedades" class="btn btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.instagram.com/kairostore" class="btn btn-outline" target="_blank" rel="noopener">@kairostore</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">KAI<span>RO</span></div>
+        <p class="foot-desc">La tienda de streetwear y moda urbana de Ponferrada. Piezas con carácter, calidad real, personas de verdad.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/kairostore" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/34987654321" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#new-in">New In</a></li>
+          <li><a href="#categorias">Hombre</a></li>
+          <li><a href="#categorias">Mujer</a></li>
+          <li><a href="#categorias">Accesorios</a></li>
+          <li><a href="#lookbook">Lookbook</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Tallas y medidas</a></li>
+          <li><a href="#">Envíos</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Seguimiento</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Horario</h4>
+        <ul>
+          <li><a href="#">Lun–Sáb 10:30–14:00</a></li>
+          <li><a href="#">Lun–Sáb 17:00–20:30</a></li>
+          <li><a href="#">Domingo cerrado</a></li>
+          <li><a href="https://wa.me/34987654321">987 654 321</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-legal">© 2025 KAIRO STORE · C/ Gil y Carrasco 8, Ponferrada · Demo creada por <a href="https://kaiteck.es" style="color:var(--red)">Kaiteck</a></p>
+      <div class="foot-legal" style="display:flex;gap:1.2rem">
+        <a href="#" style="color:var(--muted)">Aviso legal</a>
+        <a href="#" style="color:var(--muted)">Privacidad</a>
+        <a href="#" style="color:var(--muted)">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Header scroll */
+  (function () {
+    var h = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      h.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  })();
+
+  /* Scroll reveal */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
