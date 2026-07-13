@@ -12,3 +12,9 @@ SUPER_PROMPT_GENERADOR_WEBS.md
 Kaiteck_Estrategia_Dominacion_Digital.docx
 kaiteck_mejorado.html
 web/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
